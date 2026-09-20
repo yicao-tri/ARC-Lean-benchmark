@@ -1,0 +1,5 @@
+*.png binary
+*.zip binary
+*.svg binary
+data/frozen/*.csv binary
+site/artifacts/*.csv binary
