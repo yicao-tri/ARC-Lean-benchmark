@@ -44,6 +44,20 @@ copied.
   labels are legible; the caption states the controlled component and non-gold
   status.
 
+## Published GitHub Pages review
+
+- URL: `https://yicao-tri.github.io/ARC-Lean-benchmark/`.
+- GitHub Actions run `35485118323` completed successfully for commit
+  `afca989cb3750d346db15744a2d7361e918fb15c`.
+- The public HTTPS endpoint returned HTTP 200 and loaded its stylesheet, data,
+  figures, and JavaScript without path failures.
+- A direct browser review confirmed the sticky navigation, Morandi visual
+  system, full 16-row table, and the deployed interactive audit.
+- On the deployed page, selecting `Decision-only ceiling` for the Poisson case
+  changed the visible ceiling to `compatibility only` and the audit status to
+  `overclaim risk`, confirming that deployed interactivity is live rather than
+  a static screenshot.
+
 ## Remaining rendering limitation
 
 The official Docker-based TMLR Jekyll render could not be executed on this host
@@ -51,4 +65,3 @@ because Docker is not installed. The package validator covers the prescribed
 folder topology, front matter, citations, local iframe assets, anonymity,
 protected author-kit hashes, figures, data hashes, and upload ZIP. An exact
 TMLR render remains a required pre-submission gate on a Docker-enabled host.
-
