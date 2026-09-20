@@ -28,6 +28,7 @@ def apply_publication_style(font_size: float = 10.5) -> None:
         "xtick.major.size": 4.5,
         "ytick.major.size": 4.5,
         "svg.fonttype": "none",
+        "svg.hashsalt": "arc-lean-v0.1",
         "pdf.fonttype": 42,
     })
 
@@ -89,6 +90,6 @@ def paired_dumbbell(ax, categories, start, end, palette, *, end_labels, xlabel, 
 def save_figure(fig, output: Path) -> None:
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(output, dpi=220, facecolor="white")
-    fig.savefig(output.with_suffix(".svg"), facecolor="white")
-
+    metadata = {"Date": "2026-09-19"}
+    fig.savefig(output, dpi=220, facecolor="white", metadata=metadata)
+    fig.savefig(output.with_suffix(".svg"), facecolor="white", metadata=metadata)

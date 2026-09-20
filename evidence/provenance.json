@@ -65,14 +65,14 @@
       "sha256": "48f175797c36b8ec080031f434ee1898ec91ac56f0c1f9c814a1acd23fd2c859"
     },
     {
-      "bytes": 95326,
+      "bytes": 95310,
       "path": "site/assets/ceiling_ablation.svg",
-      "sha256": "d83b46a0b4855be5554b54bcb46ea9163937d8846a69551cacd52508194f6834"
+      "sha256": "64d60f28961d99dee2bb28f8a9ea693a602a770feb540f68bf122facd5bb78f3"
     },
     {
-      "bytes": 15369,
+      "bytes": 15353,
       "path": "site/assets/public_pilot_map.svg",
-      "sha256": "114f79133a47b73708e93957a7d5b97ee37b27bc79497148d1e9b0aac97afbbe"
+      "sha256": "23b7bd1d48e4abe059c5302fda86dd42c353f275001af1de952430bf2e90be3f"
     },
     {
       "bytes": 15644,
@@ -80,14 +80,14 @@
       "sha256": "3992e563e8106f48c432aae40f525c51e908a67d9c7c5df8007f9b75deb064d5"
     },
     {
-      "bytes": 95326,
+      "bytes": 95310,
       "path": "submission_folder/assets/img/submission/ceiling_ablation.svg",
-      "sha256": "d83b46a0b4855be5554b54bcb46ea9163937d8846a69551cacd52508194f6834"
+      "sha256": "64d60f28961d99dee2bb28f8a9ea693a602a770feb540f68bf122facd5bb78f3"
     },
     {
-      "bytes": 15369,
+      "bytes": 15353,
       "path": "submission_folder/assets/img/submission/public_pilot_map.svg",
-      "sha256": "114f79133a47b73708e93957a7d5b97ee37b27bc79497148d1e9b0aac97afbbe"
+      "sha256": "23b7bd1d48e4abe059c5302fda86dd42c353f275001af1de952430bf2e90be3f"
     }
   ]
 }

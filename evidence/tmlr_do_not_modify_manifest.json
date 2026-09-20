@@ -16,11 +16,6 @@
       "sha256": "3f1f178cac826cae2ca661be1acd69b59cfe618df6a52a29d86e011697ca0881"
     },
     {
-      "bytes": 6148,
-      "path": "tmlr_do_not_modify/_includes/.DS_Store",
-      "sha256": "f7ffa439a799ad429340b311cdd13392b7640a8421210494a32dfa59f5a54dcc"
-    },
-    {
       "bytes": 1522,
       "path": "tmlr_do_not_modify/_includes/figure.html",
       "sha256": "9a04b6903c5ea370dd8f08cd76bb654170488c77a1b5aef6edb32597dd04683c"
@@ -154,11 +149,6 @@
       "bytes": 1325,
       "path": "tmlr_do_not_modify/_sass/_variables.scss",
       "sha256": "63bed83a7f095d54e004035ee981864d89fba0e29223ed18b8e2a91458c9b983"
-    },
-    {
-      "bytes": 6148,
-      "path": "tmlr_do_not_modify/assets/.DS_Store",
-      "sha256": "edd8ae485ba337d1b05c4cdaf04ca959394405fea519b060330cc169f9a51c6e"
     },
     {
       "bytes": 1285,

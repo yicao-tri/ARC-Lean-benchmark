@@ -15,7 +15,7 @@ BASE = ROOT / "tmlr_do_not_modify"
 def main() -> None:
     files = []
     for path in sorted(BASE.rglob("*")):
-        if path.is_file() and "/_site/" not in str(path) and "/.jekyll-cache/" not in str(path):
+        if path.is_file() and path.name != ".DS_Store" and "/_site/" not in str(path) and "/.jekyll-cache/" not in str(path):
             files.append({
                 "path": str(path.relative_to(ROOT)),
                 "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
@@ -29,4 +29,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
