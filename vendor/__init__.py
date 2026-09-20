@@ -1,0 +1,1 @@
+"""Vendored, minimal reproducibility helpers."""

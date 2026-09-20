@@ -1,0 +1,236 @@
+{
+  "construction": "Keep the full-arm identifiability and empirical decision, but infer the assertion ceiling only from the decision label: supported->source_scoped_support_only, falsified->bounded_falsification_only, inconclusive->compatibility_only.",
+  "dataset_label": "engineering_seed_v0.1",
+  "metrics": {
+    "certificate_verification_rate": 1.0,
+    "decision_exact_match": 1.0,
+    "decision_macro_f1": 1.0,
+    "identifiability_exact_match": 1.0,
+    "identifiability_macro_f1": 1.0,
+    "joint_exact_match": 0.5714285714285714,
+    "n_claims": 14,
+    "overclaim_rate": 0.42857142857142855,
+    "promotion_ceiling_exact_match": 0.5714285714285714
+  },
+  "n_claims": 14,
+  "predictions": [
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "verified",
+      "claim_id": "H2-PREFACTOR-NONID",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "experiments/protocols/h2_identifiability_contract.json",
+        "docs/audit/h2_arrhenius_lean_pilot_assessment.json"
+      ],
+      "failure_code": null,
+      "identifiability": "non_identifiable",
+      "paper_id": "H2-PREFACTOR-NONID",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "H2-LTPO-UNIVERSAL",
+      "confidence": 1.0,
+      "decision": "falsified",
+      "evidence_ids": [
+        "docs/audit/repod_ltpo_h2_falsification_2026-09-11.json"
+      ],
+      "failure_code": null,
+      "identifiability": "identified",
+      "paper_id": "H2-LTPO-UNIVERSAL",
+      "promotion_ceiling": "bounded_falsification_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "H2-PSEUDOHALIDE-UNIVERSAL",
+      "confidence": 1.0,
+      "decision": "falsified",
+      "evidence_ids": [
+        "docs/audit/pseudohalide_h2_replication_2026-09-11.json"
+      ],
+      "failure_code": null,
+      "identifiability": "identified",
+      "paper_id": "H2-PSEUDOHALIDE-UNIVERSAL",
+      "promotion_ceiling": "bounded_falsification_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "verified",
+      "claim_id": "H2-PATH-ENTROPY-EQUIVALENCE",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "docs/audit/path_entropy_lightweight_reproduction_2026-09-11.json",
+        "experiments/protocols/core_typed_equation_contracts.json"
+      ],
+      "failure_code": null,
+      "identifiability": "non_identifiable",
+      "paper_id": "H2-PATH-ENTROPY-EQUIVALENCE",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "ARRHENIUS-COMPENSATED-TRANSFORM",
+      "confidence": 1.0,
+      "decision": "supported",
+      "evidence_ids": [
+        "docs/audit/h2_arrhenius_lean_pilot_assessment.json"
+      ],
+      "failure_code": null,
+      "identifiability": "identified",
+      "paper_id": "ARRHENIUS-COMPENSATED-TRANSFORM",
+      "promotion_ceiling": "source_scoped_support_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "ARRHENIUS-RAW-REDUCED-DIFFERENCE",
+      "confidence": 1.0,
+      "decision": "supported",
+      "evidence_ids": [
+        "docs/audit/h2_arrhenius_lean_pilot_assessment.json"
+      ],
+      "failure_code": null,
+      "identifiability": "identified",
+      "paper_id": "ARRHENIUS-RAW-REDUCED-DIFFERENCE",
+      "promotion_ceiling": "source_scoped_support_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "H1-POISSON-TRANSPORT-CLOSURE",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "experiments/protocols/core_typed_equation_contracts.json",
+        "docs/audit/space_charge_claim_graph_assessment.json"
+      ],
+      "failure_code": null,
+      "identifiability": "underdetermined",
+      "paper_id": "H1-POISSON-TRANSPORT-CLOSURE",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "BV-DIFFUSION-LIMIT",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "experiments/protocols/core_typed_equation_contracts.json"
+      ],
+      "failure_code": null,
+      "identifiability": "underdetermined",
+      "paper_id": "BV-DIFFUSION-LIMIT",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "verified",
+      "claim_id": "TST-STRUCTURAL-ENTROPY",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "experiments/protocols/core_typed_equation_contracts.json",
+        "experiments/protocols/h2_identifiability_contract.json"
+      ],
+      "failure_code": null,
+      "identifiability": "non_identifiable",
+      "paper_id": "TST-STRUCTURAL-ENTROPY",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "GRIFFITH-FLAW-SCALING",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "experiments/protocols/core_typed_equation_contracts.json"
+      ],
+      "failure_code": null,
+      "identifiability": "identified",
+      "paper_id": "GRIFFITH-FLAW-SCALING",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "verified",
+      "claim_id": "H3-PORE-ALWAYS-ARRESTS",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "experiments/protocols/representative_hypothesis_contracts.json",
+        "experiments/protocols/core_typed_equation_contracts.json"
+      ],
+      "failure_code": null,
+      "identifiability": "non_identifiable",
+      "paper_id": "H3-PORE-ALWAYS-ARRESTS",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "verified",
+      "claim_id": "ARRHENIUS-FIT-MECHANISM",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "experiments/protocols/core_typed_equation_contracts.json"
+      ],
+      "failure_code": null,
+      "identifiability": "non_identifiable",
+      "paper_id": "ARRHENIUS-FIT-MECHANISM",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "LEGACY-PREMISE-TRACE",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "experiments/protocols/representative_hypothesis_contracts.json"
+      ],
+      "failure_code": null,
+      "identifiability": "underdetermined",
+      "paper_id": "LEGACY-PREMISE-TRACE",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "H2-ARCHIVED-EA",
+      "confidence": 1.0,
+      "decision": "falsified",
+      "evidence_ids": [
+        "docs/audit/h2_archived_arrhenius_consistency_assessment.json"
+      ],
+      "failure_code": null,
+      "identifiability": "underdetermined",
+      "paper_id": "H2-ARCHIVED-EA",
+      "promotion_ceiling": "bounded_falsification_only",
+      "seed": 0
+    }
+  ],
+  "schema_version": "arc-promotion-ceiling-ablation-0.1",
+  "scope_warning": "Deterministic component-isolation diagnostic. It does not estimate external causal importance, and its source full arm may itself be an archived co-designed reference.",
+  "source_full_arm": "D_full_reference"
+}

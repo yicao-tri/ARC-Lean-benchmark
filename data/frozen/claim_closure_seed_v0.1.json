@@ -1,0 +1,298 @@
+{
+  "schema_version": "arc-claim-closure-seed-0.1",
+  "created": "2026-09-18",
+  "scope": "Curated development seed derived from reviewed ARC-SEED contracts and audits. It is not an independent test set and must not be used for confirmatory performance claims.",
+  "label_policy": {
+    "identifiability": ["identified", "non_identifiable", "underdetermined"],
+    "decision": ["supported", "falsified", "inconclusive"],
+    "separation": "A bounded empirical claim may be falsified while its proposed mechanism remains non-identifiable. Formal support is conditional on encoded assumptions and is not empirical validation."
+  },
+  "claims": [
+    {
+      "claim_id": "H2-PREFACTOR-NONID",
+      "title": "Activation entropy is recoverable from a conductivity prefactor",
+      "domain": "solid-state ionics",
+      "claim_type": "mechanistic",
+      "claim_text": "Temperature-dependent conductivity uniquely identifies activation entropy in a factorized transport prefactor.",
+      "query_scope": "separate identification of activation entropy from sample-specific transport factors",
+      "assumptions": ["ln(prefactor)=ln(C_transport)+DeltaS_dagger/kB"],
+      "observed_variables": ["conductivity_temperature_curve", "transform_specific_prefactor"],
+      "target_variables": ["DeltaS_dagger", "C_transport"],
+      "required_measurements": ["conductivity_temperature_curve", "independent_C_transport_or_activation_entropy_measurement"],
+      "competing_mechanisms": ["activation_entropy_change", "carrier_or_attempt_frequency_change"],
+      "evidence": [
+        {"path": "experiments/protocols/h2_identifiability_contract.json", "sha256": "d5db07133db9bce544f3c2a3f56781d461dd584d6f820037e6d41dda0ce2d3a7", "role": "identifiability contract", "source_kind": "local_artifact"},
+        {"path": "docs/audit/h2_arrhenius_lean_pilot_assessment.json", "sha256": "3d0e8736cf4dcd506f39cca03ab63cd69fc7666d456733bf5ca564873b27c71c", "role": "Lean kernel receipt", "source_kind": "formal_receipt"}
+      ],
+      "countermodels": [
+        {
+          "id": "entropy_transport_shift",
+          "observable_expression": "exp(S)*exp(C)",
+          "target_expression": "S",
+          "witness_a": {"S": 1.0, "C": 2.0},
+          "witness_b": {"S": 1.5, "C": 1.5},
+          "explanation": "Compensating changes in entropy and the residual transport factor preserve the fitted prefactor."
+        }
+      ],
+      "formal_receipt": {"theorem": "ARCSeed.H2.prefactor_shift_nonidentifiability", "status": "kernel_checked", "audit_path": "docs/audit/h2_arrhenius_lean_pilot_assessment.json"},
+      "closure_measurements": ["independently calibrate C_transport components or obtain an activation-entropy-specific observable"],
+      "expected": {"identifiability": "non_identifiable", "decision": "inconclusive", "promotion_ceiling": "compatibility_only"}
+    },
+    {
+      "claim_id": "H2-LTPO-UNIVERSAL",
+      "title": "Universal monotonic heterogeneity-conductivity response in LTPO",
+      "domain": "solid-state ionics",
+      "claim_type": "universal",
+      "claim_text": "Increasing substitution-associated structural heterogeneity monotonically raises the Arrhenius prefactor and near-room-temperature conductivity.",
+      "query_scope": "bounded universal monotonicity in the six-composition LTPO campaign",
+      "assumptions": ["the tested compositions belong to the declared comparison scope"],
+      "observed_variables": ["Hf_substitution", "arrhenius_prefactor", "near_room_temperature_conductivity"],
+      "target_variables": ["monotonic_response"],
+      "required_measurements": ["Hf_substitution", "arrhenius_prefactor", "near_room_temperature_conductivity"],
+      "competing_mechanisms": ["secondary_phase_growth", "microstructure_change", "activation_entropy_change"],
+      "evidence": [
+        {"path": "docs/audit/repod_ltpo_h2_falsification_2026-09-11.json", "sha256": "91930077bdedf87e19b6e1466fb88aaa3d70feae25f043f40001c599b7445ee2", "role": "hash-bound raw-EIS reanalysis", "source_kind": "local_artifact"}
+      ],
+      "empirical_decision": {"rule": "falsification if a higher-substitution specimen has both prefactor and conductivity below the registered monotonic comparator", "trigger_met": true, "evidence_summary": "x=0.20/x=0.05 ratios are 0.087 for prefactor and 0.196 for conductivity."},
+      "closure_measurements": [],
+      "expected": {"identifiability": "identified", "decision": "falsified", "promotion_ceiling": "bounded_falsification_only"}
+    },
+    {
+      "claim_id": "H2-PSEUDOHALIDE-UNIVERSAL",
+      "title": "Universal mixing-entropy transport optimum",
+      "domain": "solid-state ionics",
+      "claim_type": "universal",
+      "claim_text": "The composition maximizing nominal binary mixing entropy also maximizes conductivity and the fitted Arrhenius prefactor.",
+      "query_scope": "five-composition pseudohalide-argyrodite campaign",
+      "assumptions": ["nominal composition is the comparison coordinate"],
+      "observed_variables": ["composition", "nominal_mixing_entropy", "conductivity", "arrhenius_prefactor"],
+      "target_variables": ["coincident_optimum"],
+      "required_measurements": ["composition", "nominal_mixing_entropy", "conductivity", "arrhenius_prefactor"],
+      "competing_mechanisms": ["carrier_concentration", "phase_fraction", "pathway_connectivity"],
+      "evidence": [
+        {"path": "docs/audit/pseudohalide_h2_replication_2026-09-11.json", "sha256": "99d6480f5c01acae4b192503ea39fda38bc310ecce619dc2f99badc10038e535", "role": "independent raw-EIS campaign reanalysis", "source_kind": "local_artifact"}
+      ],
+      "empirical_decision": {"rule": "falsification if entropy, conductivity, and prefactor optima occur at different compositions", "trigger_met": true, "evidence_summary": "The reported audit places the three optima at Br fractions 0.50, 0.75, and 0.00."},
+      "closure_measurements": [],
+      "expected": {"identifiability": "identified", "decision": "falsified", "promotion_ceiling": "bounded_falsification_only"}
+    },
+    {
+      "claim_id": "H2-PATH-ENTROPY-EQUIVALENCE",
+      "title": "Diffusion path entropy equals activation entropy",
+      "domain": "solid-state ionics",
+      "claim_type": "mechanistic",
+      "claim_text": "Markov-state diffusion path entropy is interchangeable with the activation entropy entering transition-state theory.",
+      "query_scope": "mapping between two entropy constructs",
+      "assumptions": ["path entropy is computed from transition-path probabilities"],
+      "observed_variables": ["path_entropy"],
+      "target_variables": ["activation_entropy"],
+      "required_measurements": ["path_entropy", "activation_entropy"],
+      "competing_mechanisms": ["topological pathway multiplicity", "transition-state free-energy degeneracy"],
+      "evidence": [
+        {"path": "docs/audit/path_entropy_lightweight_reproduction_2026-09-11.json", "sha256": "787b1c30774b096f40d8b17b5e1f6050eae5a98f085e929ba630fb65a56fd777", "role": "same-source path-entropy reproduction", "source_kind": "local_artifact"},
+        {"path": "experiments/protocols/core_typed_equation_contracts.json", "sha256": "358d3eac5c694093cb52777a6841be78c5a41d88f1be904c5192a095af882705", "role": "transition-state-theory contract", "source_kind": "local_artifact"}
+      ],
+      "countermodels": [
+        {"id": "same_path_different_activation_entropy", "observable_expression": "Sp", "target_expression": "Sact", "witness_a": {"Sp": 100.0, "Sact": 10.0}, "witness_b": {"Sp": 100.0, "Sact": 20.0}, "explanation": "The current evidence supplies no injective map from path entropy to activation entropy."}
+      ],
+      "closure_measurements": ["measure or independently identify activation entropy on specimen-matched systems"],
+      "expected": {"identifiability": "non_identifiable", "decision": "inconclusive", "promotion_ceiling": "compatibility_only"}
+    },
+    {
+      "claim_id": "ARRHENIUS-COMPENSATED-TRANSFORM",
+      "title": "Compensated Arrhenius transform is affine",
+      "domain": "chemical kinetics",
+      "claim_type": "formal_identity",
+      "claim_text": "If sigma=(A/T) exp[-Ea/(kB T)], then log((sigma T)/Aref) is affine in 1/T.",
+      "query_scope": "conditional algebra under the declared constitutive convention",
+      "assumptions": ["A>0", "Aref>0", "kB>0", "T>0", "declared constitutive equation"],
+      "observed_variables": ["sigma", "T", "Aref"],
+      "target_variables": ["affine_transform_identity"],
+      "required_measurements": ["sigma", "T", "Aref"],
+      "competing_mechanisms": [],
+      "evidence": [
+        {"path": "docs/audit/h2_arrhenius_lean_pilot_assessment.json", "sha256": "3d0e8736cf4dcd506f39cca03ab63cd69fc7666d456733bf5ca564873b27c71c", "role": "Lean kernel receipt", "source_kind": "formal_receipt"}
+      ],
+      "formal_receipt": {"theorem": "ARCSeed.H2.compensated_log_is_affine", "status": "kernel_checked", "audit_path": "docs/audit/h2_arrhenius_lean_pilot_assessment.json"},
+      "closure_measurements": [],
+      "expected": {"identifiability": "identified", "decision": "supported", "promotion_ceiling": "conditional_formal_result_only"}
+    },
+    {
+      "claim_id": "ARRHENIUS-RAW-REDUCED-DIFFERENCE",
+      "title": "Raw and reduced log transforms differ by log temperature",
+      "domain": "chemical kinetics",
+      "claim_type": "formal_identity",
+      "claim_text": "Normalized log(sigma) differs from normalized log(sigma/T) by log(T/Tref).",
+      "query_scope": "conditional transform identity",
+      "assumptions": ["sigma>0", "sigma_ref>0", "T>0", "Tref>0"],
+      "observed_variables": ["sigma", "sigma_ref", "T", "Tref"],
+      "target_variables": ["transform_difference"],
+      "required_measurements": ["sigma", "sigma_ref", "T", "Tref"],
+      "competing_mechanisms": [],
+      "evidence": [
+        {"path": "docs/audit/h2_arrhenius_lean_pilot_assessment.json", "sha256": "3d0e8736cf4dcd506f39cca03ab63cd69fc7666d456733bf5ca564873b27c71c", "role": "Lean kernel receipt", "source_kind": "formal_receipt"}
+      ],
+      "formal_receipt": {"theorem": "ARCSeed.H2.raw_log_contains_log_temperature", "status": "kernel_checked", "audit_path": "docs/audit/h2_arrhenius_lean_pilot_assessment.json"},
+      "closure_measurements": [],
+      "expected": {"identifiability": "identified", "decision": "supported", "promotion_ceiling": "conditional_formal_result_only"}
+    },
+    {
+      "claim_id": "H1-POISSON-TRANSPORT-CLOSURE",
+      "title": "Poisson electrostatics alone closes ion transport",
+      "domain": "electrochemical stability",
+      "claim_type": "mechanistic",
+      "claim_text": "Poisson electrostatics alone determines ionic current and dendrite perturbation growth.",
+      "query_scope": "space-charge dendrite mechanism",
+      "assumptions": ["electrostatic approximation"],
+      "observed_variables": ["electric_potential", "charge_density"],
+      "target_variables": ["ionic_current", "perturbation_growth_rate"],
+      "required_measurements": ["electric_potential", "charge_density", "ion_transport_law", "boundary_conditions", "interfacial_kinetics"],
+      "competing_mechanisms": ["mass transport", "interfacial kinetics", "mechanical instability"],
+      "evidence": [
+        {"path": "experiments/protocols/core_typed_equation_contracts.json", "sha256": "358d3eac5c694093cb52777a6841be78c5a41d88f1be904c5192a095af882705", "role": "Poisson typed contract", "source_kind": "local_artifact"},
+        {"path": "docs/audit/space_charge_claim_graph_assessment.json", "sha256": "65ead3115752dd035132e604585c377d1f986163d0971628f5f5336253d68185", "role": "H1 claim-graph audit", "source_kind": "local_artifact"}
+      ],
+      "closure_measurements": ["specify transport PDE, interface kinetics, geometry, and boundary conditions"],
+      "expected": {"identifiability": "underdetermined", "decision": "inconclusive", "promotion_ceiling": "proposal_only"}
+    },
+    {
+      "claim_id": "BV-DIFFUSION-LIMIT",
+      "title": "Butler-Volmer alone predicts diffusion limitation",
+      "domain": "electrochemistry",
+      "claim_type": "predictive",
+      "claim_text": "A Butler-Volmer relation without a transport closure uniquely predicts a diffusion-limited current.",
+      "query_scope": "current-overpotential response outside kinetic control",
+      "assumptions": ["single effective charge-transfer step"],
+      "observed_variables": ["overpotential", "exchange_current_density"],
+      "target_variables": ["limiting_current"],
+      "required_measurements": ["overpotential", "exchange_current_density", "mass_transport_model", "concentration_boundary_conditions"],
+      "competing_mechanisms": ["kinetic limitation", "diffusion limitation", "film resistance"],
+      "evidence": [
+        {"path": "experiments/protocols/core_typed_equation_contracts.json", "sha256": "358d3eac5c694093cb52777a6841be78c5a41d88f1be904c5192a095af882705", "role": "Butler-Volmer typed contract", "source_kind": "local_artifact"}
+      ],
+      "closure_measurements": ["add a mass-transport law and concentration boundary conditions"],
+      "expected": {"identifiability": "underdetermined", "decision": "inconclusive", "promotion_ceiling": "proposal_only"}
+    },
+    {
+      "claim_id": "TST-STRUCTURAL-ENTROPY",
+      "title": "A structural entropy proxy identifies activation entropy",
+      "domain": "solid-state ionics",
+      "claim_type": "mechanistic",
+      "claim_text": "A static structural entropy proxy uniquely measures the activation entropy in transition-state theory.",
+      "query_scope": "proxy-to-mechanism mapping",
+      "assumptions": ["transition-state-theory rate expression"],
+      "observed_variables": ["structural_entropy_proxy", "conductivity_temperature_curve"],
+      "target_variables": ["activation_entropy"],
+      "required_measurements": ["structural_entropy_proxy", "conductivity_temperature_curve", "activation_entropy_specific_measurement"],
+      "competing_mechanisms": ["carrier concentration", "attempt frequency", "transmission coefficient"],
+      "evidence": [
+        {"path": "experiments/protocols/core_typed_equation_contracts.json", "sha256": "358d3eac5c694093cb52777a6841be78c5a41d88f1be904c5192a095af882705", "role": "transition-state-theory contract", "source_kind": "local_artifact"},
+        {"path": "experiments/protocols/h2_identifiability_contract.json", "sha256": "d5db07133db9bce544f3c2a3f56781d461dd584d6f820037e6d41dda0ce2d3a7", "role": "proxy naming guard", "source_kind": "local_artifact"}
+      ],
+      "countermodels": [
+        {"id": "same_proxy_different_activation_entropy", "observable_expression": "X", "target_expression": "Sact", "witness_a": {"X": 2.0, "Sact": 1.0}, "witness_b": {"X": 2.0, "Sact": 3.0}, "explanation": "Without a calibrated measurement model, the same proxy value permits different activation entropies."}
+      ],
+      "closure_measurements": ["calibrate the proxy against an independent activation-entropy-sensitive observable"],
+      "expected": {"identifiability": "non_identifiable", "decision": "inconclusive", "promotion_ceiling": "compatibility_only"}
+    },
+    {
+      "claim_id": "GRIFFITH-FLAW-SCALING",
+      "title": "Griffith strength decreases with crack length under fixed material properties",
+      "domain": "fracture mechanics",
+      "claim_type": "predictive",
+      "claim_text": "Under the ideal Griffith assumptions and fixed E and gamma, increasing crack half-length decreases critical stress.",
+      "query_scope": "conditional monotonicity of the idealized Griffith criterion",
+      "assumptions": ["linear elastic brittle fracture", "Mode I", "fixed E", "fixed surface energy", "ideal central crack"],
+      "observed_variables": ["E", "surface_energy", "crack_half_length"],
+      "target_variables": ["critical_stress_direction"],
+      "required_measurements": ["E", "surface_energy", "crack_half_length"],
+      "competing_mechanisms": [],
+      "evidence": [
+        {"path": "experiments/protocols/core_typed_equation_contracts.json", "sha256": "358d3eac5c694093cb52777a6841be78c5a41d88f1be904c5192a095af882705", "role": "Griffith typed contract", "source_kind": "local_artifact"}
+      ],
+      "formal_receipt": {"theorem": "not_yet_kernel_checked", "status": "declared_only"},
+      "closure_measurements": [],
+      "expected": {"identifiability": "identified", "decision": "inconclusive", "promotion_ceiling": "proposal_only"}
+    },
+    {
+      "claim_id": "H3-PORE-ALWAYS-ARRESTS",
+      "title": "Porosity always arrests cracks",
+      "domain": "solid-state battery mechanics",
+      "claim_type": "mechanistic",
+      "claim_text": "Increasing pore fraction necessarily raises failure stress by shortening the effective crack.",
+      "query_scope": "competition between effective crack length and toughness loss",
+      "assumptions": ["Griffith-like failure criterion"],
+      "observed_variables": ["failure_stress"],
+      "target_variables": ["effective_crack_length", "fracture_toughness"],
+      "required_measurements": ["failure_stress", "effective_crack_length", "fracture_toughness", "pore_topology"],
+      "competing_mechanisms": ["crack shortening", "toughness loss", "stress concentration"],
+      "evidence": [
+        {"path": "experiments/protocols/representative_hypothesis_contracts.json", "sha256": "23156f3a66b8cd262609964be9d0d8c9e6b7f3ea3a55318f6241fe00bd0b9db5", "role": "H3 representative contract", "source_kind": "local_artifact"},
+        {"path": "experiments/protocols/core_typed_equation_contracts.json", "sha256": "358d3eac5c694093cb52777a6841be78c5a41d88f1be904c5192a095af882705", "role": "Griffith typed contract", "source_kind": "local_artifact"}
+      ],
+      "countermodels": [
+        {"id": "toughness_crack_tradeoff", "observable_expression": "K/sqrt(a)", "target_expression": "a", "witness_a": {"K": 1.0, "a": 1.0}, "witness_b": {"K": 2.0, "a": 4.0}, "explanation": "Different toughness and effective crack lengths yield the same failure stress."}
+      ],
+      "closure_measurements": ["measure pore topology, effective crack length, and K_IC on matched specimens"],
+      "expected": {"identifiability": "non_identifiable", "decision": "inconclusive", "promotion_ceiling": "compatibility_only"}
+    },
+    {
+      "claim_id": "ARRHENIUS-FIT-MECHANISM",
+      "title": "A good Arrhenius fit identifies the microscopic mechanism",
+      "domain": "chemical kinetics",
+      "claim_type": "mechanistic",
+      "claim_text": "An accurate Arrhenius fit uniquely identifies the microscopic transport mechanism.",
+      "query_scope": "mechanism identification from one effective temperature law",
+      "assumptions": ["one effective Arrhenius regime"],
+      "observed_variables": ["temperature", "rate_like_observable"],
+      "target_variables": ["mechanism_identity"],
+      "required_measurements": ["temperature", "rate_like_observable", "mechanism_specific_observable"],
+      "competing_mechanisms": ["bulk hopping", "grain-boundary-limited transport", "carrier-density change"],
+      "evidence": [
+        {"path": "experiments/protocols/core_typed_equation_contracts.json", "sha256": "358d3eac5c694093cb52777a6841be78c5a41d88f1be904c5192a095af882705", "role": "Arrhenius validity limits", "source_kind": "local_artifact"}
+      ],
+      "countermodels": [
+        {"id": "same_arrhenius_different_mechanism", "observable_expression": "A*exp(-Ea/T)", "target_expression": "m", "witness_a": {"A": 10.0, "Ea": 2.0, "T": 3.0, "m": 1.0}, "witness_b": {"A": 10.0, "Ea": 2.0, "T": 3.0, "m": 2.0}, "explanation": "A phenomenological Arrhenius curve does not encode a unique microscopic label."}
+      ],
+      "closure_measurements": ["add a mechanism-specific observable or intervention that separates the competing transport models"],
+      "expected": {"identifiability": "non_identifiable", "decision": "inconclusive", "promotion_ceiling": "compatibility_only"}
+    },
+    {
+      "claim_id": "LEGACY-PREMISE-TRACE",
+      "title": "Legacy free-text premises are source-resolved",
+      "domain": "scientific provenance",
+      "claim_type": "descriptive",
+      "claim_text": "A historical ARC-SEED hypothesis with free-text premises retains enough information to reconstruct exact law and source bindings.",
+      "query_scope": "generation-time premise provenance",
+      "assumptions": [],
+      "observed_variables": ["free_text_premise"],
+      "target_variables": ["exact_law_binding", "source_locator"],
+      "required_measurements": ["free_text_premise", "generation_time_law_id", "generation_time_source_locator"],
+      "competing_mechanisms": ["post_hoc_semantic_match", "exact_generation_time_retrieval"],
+      "evidence": [
+        {"path": "experiments/protocols/representative_hypothesis_contracts.json", "sha256": "23156f3a66b8cd262609964be9d0d8c9e6b7f3ea3a55318f6241fe00bd0b9db5", "role": "post-hoc representative contracts", "source_kind": "local_artifact"}
+      ],
+      "closure_measurements": ["preserve exact law IDs, source locators, prompts, and retrieval traces at generation time"],
+      "expected": {"identifiability": "underdetermined", "decision": "inconclusive", "promotion_ceiling": "proposal_only"}
+    },
+    {
+      "claim_id": "H2-ARCHIVED-EA",
+      "title": "Archived conductivity tables verify declared activation energies",
+      "domain": "solid-state ionics",
+      "claim_type": "descriptive",
+      "claim_text": "Two archived temperature-conductivity tables reproduce their declared activation energies within 0.01 eV and can validate H2.",
+      "query_scope": "source and fit reproducibility of archived tables",
+      "assumptions": ["table identity and fitting convention are known"],
+      "observed_variables": ["temperature_conductivity_points"],
+      "target_variables": ["declared_activation_energy", "specimen_identity"],
+      "required_measurements": ["temperature_conductivity_points", "primary_source", "specimen_identity", "fitting_convention", "uncertainty"],
+      "competing_mechanisms": ["wrong transform", "transcription error", "different fit window"],
+      "evidence": [
+        {"path": "docs/audit/h2_archived_arrhenius_consistency_assessment.json", "sha256": "05931f15bfb621fdf01d4142743428c9da3b85f4f99b132a7919cda37e5fa68a", "role": "archived-table audit", "source_kind": "local_artifact"}
+      ],
+      "empirical_decision": {"rule": "falsification if no declared Ea reproduces within 0.01 eV", "trigger_met": true, "evidence_summary": "The audit reports 0/2 declared values reproduced within tolerance."},
+      "closure_measurements": ["recover primary specimen identity, original fit convention, uncertainty, and source files"],
+      "expected": {"identifiability": "underdetermined", "decision": "falsified", "promotion_ceiling": "bounded_falsification_only"}
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "/Users/yicao/Documents/ARC/ARC-lean/theorem-proving-reasoning/formal/TransportInterventionIdentifiability.lean"
+  ],
+  "generated_at": "2026-09-19T01:56:47.171365+00:00",
+  "kernel_checked": true,
+  "lean_toolchain_sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+  "lean_version": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "project": "/Users/yicao/Documents/ARC/ARC-SEED/formalization/h2_arrhenius",
+  "returncode": 0,
+  "schema_version": "arc-lean-proof-receipt-1.0",
+  "scientific_scope": "conditional algebra only; no empirical premise or material mechanism is validated",
+  "source": "/Users/yicao/Documents/ARC/ARC-lean/theorem-proving-reasoning/formal/TransportInterventionIdentifiability.lean",
+  "source_sha256": "edbe8f1daf03d2bf0fc789041cbc8c0fbab760b3ce0d6da9b5741cdf30624d4a",
+  "stderr": "",
+  "stdout": ""
+}

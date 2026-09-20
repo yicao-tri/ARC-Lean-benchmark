@@ -1,0 +1,93 @@
+{
+  "does_not_support": [
+    "sealed-test generalization",
+    "independent expert accuracy",
+    "population-level inference or stochastic uncertainty",
+    "empirical truth of a material mechanism from a Lean receipt"
+  ],
+  "schema_version": "arc-lean-web-provenance-0.1",
+  "source_artifacts": [
+    {
+      "bytes": 22810,
+      "path": "data/frozen/claim_closure_seed_v0.1.json",
+      "sha256": "ce429eb746f7dc52a36e081f67066e878b0410957a31ab5caecbc1a6fb0f5fd8"
+    },
+    {
+      "bytes": 2591,
+      "path": "data/frozen/icml_two_regime_pilot_v0.4.csv",
+      "sha256": "ee13bf5d8f82aa83a219e0ec9a3fc877f05005f03678f9cdee0514e825ce9617"
+    },
+    {
+      "bytes": 963,
+      "path": "data/frozen/path_entropy_lean_receipt.json",
+      "sha256": "b319b9697a666840e8c39a5e0b81110d933832db4733dd9af92311e7f5b8e708"
+    },
+    {
+      "bytes": 44605,
+      "path": "data/frozen/public_deep_case_pilot_v0.1.json",
+      "sha256": "7ad1494ca4cd540a47e05f06f15a816476168955973674557a8b65e9a9f50e2e"
+    },
+    {
+      "bytes": 79362,
+      "path": "data/frozen/public_micro_rag_pilot_v0.1.json",
+      "sha256": "22a971192c99088d02813aaf1d8f38f7a49a3d91bc2d1384c8f2a8c558007f52"
+    },
+    {
+      "bytes": 6341,
+      "path": "data/frozen/public_promotion_ceiling_ablation_v0.1.json",
+      "sha256": "81e9257ca2bf8547284b5525fded58087f9d92d89e4ee5d99c76276838062b5c"
+    },
+    {
+      "bytes": 8170,
+      "path": "data/frozen/seed_promotion_ceiling_ablation_v0.1.json",
+      "sha256": "fd36993d6e1a81e708f34b6e63709823bbfe42e4f523a5b00812da8d91c10a18"
+    },
+    {
+      "bytes": 977,
+      "path": "data/frozen/transport_intervention_lean_receipt.json",
+      "sha256": "ba21d15fe402391152f594366a0ddeece1a75718b642a780dc3fe5cbb7b84144"
+    }
+  ],
+  "supported_claims": [
+    "the website values reproduce the frozen two-regime pilot artifacts",
+    "retrieval recall and audit performance are reported as separate quantities",
+    "the ceiling ablation changes only the promotion rule while reference identifiability and decision remain fixed"
+  ],
+  "web_outputs": [
+    {
+      "bytes": 11922,
+      "path": "site/assets/arc.css",
+      "sha256": "744280660c07dbe442d8331567086fe5027eddc529cc74434c14a1d6c4b41f11"
+    },
+    {
+      "bytes": 4683,
+      "path": "site/assets/arc.js",
+      "sha256": "48f175797c36b8ec080031f434ee1898ec91ac56f0c1f9c814a1acd23fd2c859"
+    },
+    {
+      "bytes": 95326,
+      "path": "site/assets/ceiling_ablation.svg",
+      "sha256": "d83b46a0b4855be5554b54bcb46ea9163937d8846a69551cacd52508194f6834"
+    },
+    {
+      "bytes": 15369,
+      "path": "site/assets/public_pilot_map.svg",
+      "sha256": "114f79133a47b73708e93957a7d5b97ee37b27bc79497148d1e9b0aac97afbbe"
+    },
+    {
+      "bytes": 15644,
+      "path": "site/index.html",
+      "sha256": "3992e563e8106f48c432aae40f525c51e908a67d9c7c5df8007f9b75deb064d5"
+    },
+    {
+      "bytes": 95326,
+      "path": "submission_folder/assets/img/submission/ceiling_ablation.svg",
+      "sha256": "d83b46a0b4855be5554b54bcb46ea9163937d8846a69551cacd52508194f6834"
+    },
+    {
+      "bytes": 15369,
+      "path": "submission_folder/assets/img/submission/public_pilot_map.svg",
+      "sha256": "114f79133a47b73708e93957a7d5b97ee37b27bc79497148d1e9b0aac97afbbe"
+    }
+  ]
+}

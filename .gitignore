@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+.pytest_cache/
+*.pyc
+tmlr_do_not_modify/_site/
+tmlr_do_not_modify/.jekyll-cache/

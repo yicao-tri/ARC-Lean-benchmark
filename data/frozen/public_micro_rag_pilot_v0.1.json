@@ -1,0 +1,1709 @@
+{
+  "contract_path": "experiments/public_micro_rag_contract_v0.5.json",
+  "corpus_path": "data/public_micro_rag_corpus_v0.1.json",
+  "dataset_path": "data/public_deep_case_pilot_v0.1.json",
+  "metrics": {
+    "ollama_qwen3_5_4b_micro_rag": {
+      "certificate_verification_rate": null,
+      "decision_exact_match": 0.625,
+      "decision_macro_f1": 0.4090909090909091,
+      "identifiability_exact_match": 0.125,
+      "identifiability_macro_f1": 0.07407407407407407,
+      "joint_exact_match": 0.0,
+      "n_claims": 8,
+      "overclaim_rate": 0.0,
+      "promotion_ceiling_exact_match": 0.125
+    },
+    "ollama_qwen3_8b_micro_rag": {
+      "certificate_verification_rate": null,
+      "decision_exact_match": 0.5,
+      "decision_macro_f1": 0.2222222222222222,
+      "identifiability_exact_match": 0.375,
+      "identifiability_macro_f1": 0.1818181818181818,
+      "joint_exact_match": 0.0,
+      "n_claims": 8,
+      "overclaim_rate": 0.375,
+      "promotion_ceiling_exact_match": 0.0
+    }
+  },
+  "models": [
+    "qwen3.5:4b",
+    "qwen3:8b"
+  ],
+  "n_claims": 8,
+  "pairing": {
+    "complete": true,
+    "duplicates": [],
+    "expected_records": 16,
+    "extra": [],
+    "inconsistent_paper_claims": [],
+    "missing": [],
+    "observed_records": 16
+  },
+  "parse_status_counts": {
+    "regex_recovered": 2,
+    "strict_json": 14
+  },
+  "retrieval_metrics": {
+    "mean_reciprocal_rank": 0.8541666666666666,
+    "n_queries": 8,
+    "source_recall_at_1": 0.75,
+    "source_recall_at_3": 1,
+    "source_recall_at_4": 1
+  },
+  "retrieval_rows": [
+    {
+      "claim_id": "POLETAYEV-2022-SUBDIFFUSION-OBSERVABLE",
+      "query": "Long-window subdiffusion in two public beta-alumina sample trajectories The supplied 300 K Na beta-double-prime-alumina and Ag beta-alumina sample trajectories exhibit sublinear mean-squared-displacement scaling over 10,000-50,000 ps. only the two public sample CSV files at upstream commit badb91e971e4a5263a433cfa9fcbf914d53ed2a1 and the preregistered finite log-log fit window",
+      "ranked_passages": [
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:4",
+          "rank": 1,
+          "score": 46.15684573163689
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:0",
+          "rank": 2,
+          "score": 32.63883040349205
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:2",
+          "rank": 3,
+          "score": 32.373804363437785
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:3",
+          "rank": 4,
+          "score": 12.136995090325286
+        },
+        {
+          "doc_id": "paper_deng_2022",
+          "passage_id": "paper_deng_2022:0",
+          "rank": 5,
+          "score": 10.257172211043745
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:1",
+          "rank": 6,
+          "score": 8.284182253873375
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:1",
+          "rank": 7,
+          "score": 6.901102030141054
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:5",
+          "rank": 8,
+          "score": 6.147241068174861
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:3",
+          "rank": 9,
+          "score": 4.873228251475391
+        },
+        {
+          "doc_id": "paper_ji_2023",
+          "passage_id": "paper_ji_2023:0",
+          "rank": 10,
+          "score": 4.794686021705891
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:2",
+          "rank": 11,
+          "score": 4.735572196156179
+        },
+        {
+          "doc_id": "paper_poletayev_2022",
+          "passage_id": "paper_poletayev_2022:0",
+          "rank": 12,
+          "score": 4.318890697420013
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:0",
+          "rank": 13,
+          "score": 3.9576781205391396
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:1",
+          "rank": 14,
+          "score": 2.98261482559932
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:4",
+          "rank": 15,
+          "score": 2.9249419482978656
+        },
+        {
+          "doc_id": "repo_deng_2022",
+          "passage_id": "repo_deng_2022:0",
+          "rank": 16,
+          "score": 2.358501526469398
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:5",
+          "rank": 17,
+          "score": 2.345827198703704
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:0",
+          "rank": 18,
+          "score": 2.246106021857943
+        },
+        {
+          "doc_id": "paper_guan_2026",
+          "passage_id": "paper_guan_2026:0",
+          "rank": 19,
+          "score": 0.9989483150232794
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:2",
+          "rank": 20,
+          "score": 0.9200989665994344
+        }
+      ],
+      "relevant_doc_ids": [
+        "paper_poletayev_2022",
+        "repo_poletayev_2022"
+      ]
+    },
+    {
+      "claim_id": "POLETAYEV-2022-PROCESSING-DEFECT-CAUSE",
+      "query": "Processing-controlled defect distributions cause persistent subdiffusion in physical beta-aluminas Processing modulates the spatial distribution of charge-compensating defects, and that distribution causally drives the persistent subdiffusive transport observed in physical beta- and beta-double-prime-aluminas. external causal transport from the paper's simulated defect configurations to physical specimens, not merely causal effects internal to the declared LAMMPS model",
+      "ranked_passages": [
+        {
+          "doc_id": "paper_poletayev_2022",
+          "passage_id": "paper_poletayev_2022:0",
+          "rank": 1,
+          "score": 48.53042357244728
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:0",
+          "rank": 2,
+          "score": 25.04215235109057
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:2",
+          "rank": 3,
+          "score": 22.233356104207722
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:0",
+          "rank": 4,
+          "score": 13.912200575038828
+        },
+        {
+          "doc_id": "paper_deng_2022",
+          "passage_id": "paper_deng_2022:0",
+          "rank": 5,
+          "score": 13.71643388878521
+        },
+        {
+          "doc_id": "paper_ji_2023",
+          "passage_id": "paper_ji_2023:0",
+          "rank": 6,
+          "score": 13.070436102696327
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:4",
+          "rank": 7,
+          "score": 13.010496434852591
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:3",
+          "rank": 8,
+          "score": 10.709491798292747
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:1",
+          "rank": 9,
+          "score": 10.626344593118818
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:1",
+          "rank": 10,
+          "score": 9.876533724426276
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:2",
+          "rank": 11,
+          "score": 7.094913234625977
+        },
+        {
+          "doc_id": "paper_guan_2026",
+          "passage_id": "paper_guan_2026:0",
+          "rank": 12,
+          "score": 6.900701618613932
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:3",
+          "rank": 13,
+          "score": 6.779557060322472
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:0",
+          "rank": 14,
+          "score": 6.754120443787398
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:1",
+          "rank": 15,
+          "score": 4.2639466804540564
+        },
+        {
+          "doc_id": "repo_deng_2022",
+          "passage_id": "repo_deng_2022:0",
+          "rank": 16,
+          "score": 2.8685074395772645
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:4",
+          "rank": 17,
+          "score": 2.5952871254673178
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:5",
+          "rank": 18,
+          "score": 1.6917249438913662
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:5",
+          "rank": 19,
+          "score": 1.553157664284205
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:2",
+          "rank": 20,
+          "score": 1.0634002538948875
+        }
+      ],
+      "relevant_doc_ids": [
+        "paper_poletayev_2022",
+        "repo_poletayev_2022"
+      ]
+    },
+    {
+      "claim_id": "GUAN-2026-LPSCLII-PATH-ENTROPY-REPRODUCTION",
+      "query": "The public eSSE demo reproduces the LPSCl-II path-entropy estimate Using the pinned eSSE estimator, lag time, path cutoff, and public precomputed LPSCl-II discrete trajectories reproduces the four notebook path-entropies and a total within the paper-reported 415.72 plus or minus 6.02 J/mol/K interval. the compact public LPSCl-II discrete-trajectory demo at commit c3eed1993ddfd23cdb27ed8a8b04d19e99d5260a; raw-coordinate discretization and other materials are excluded",
+      "ranked_passages": [
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:1",
+          "rank": 1,
+          "score": 38.654546414915906
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:0",
+          "rank": 2,
+          "score": 24.759715342322593
+        },
+        {
+          "doc_id": "paper_guan_2026",
+          "passage_id": "paper_guan_2026:0",
+          "rank": 3,
+          "score": 14.86703769133311
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:4",
+          "rank": 4,
+          "score": 13.708343639465339
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:1",
+          "rank": 5,
+          "score": 12.215873422391345
+        },
+        {
+          "doc_id": "paper_deng_2022",
+          "passage_id": "paper_deng_2022:0",
+          "rank": 6,
+          "score": 11.390295331211973
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:4",
+          "rank": 7,
+          "score": 11.292412631944577
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:2",
+          "rank": 8,
+          "score": 10.920532670186645
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:3",
+          "rank": 9,
+          "score": 10.53607671461351
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:0",
+          "rank": 10,
+          "score": 10.444968032979292
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:2",
+          "rank": 11,
+          "score": 10.339028511435979
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:2",
+          "rank": 12,
+          "score": 10.223432615782775
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:3",
+          "rank": 13,
+          "score": 9.287236308448636
+        },
+        {
+          "doc_id": "paper_ji_2023",
+          "passage_id": "paper_ji_2023:0",
+          "rank": 14,
+          "score": 8.326677490086801
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:5",
+          "rank": 15,
+          "score": 5.747560801191965
+        },
+        {
+          "doc_id": "paper_poletayev_2022",
+          "passage_id": "paper_poletayev_2022:0",
+          "rank": 16,
+          "score": 5.356268429586855
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:1",
+          "rank": 17,
+          "score": 4.290250358340332
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:0",
+          "rank": 18,
+          "score": 3.1954009052437744
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:5",
+          "rank": 19,
+          "score": 1.8731531983617853
+        },
+        {
+          "doc_id": "repo_deng_2022",
+          "passage_id": "repo_deng_2022:0",
+          "rank": 20,
+          "score": 0.7063029911106172
+        }
+      ],
+      "relevant_doc_ids": [
+        "paper_guan_2026",
+        "repo_guan_2026"
+      ]
+    },
+    {
+      "claim_id": "GUAN-2026-PATH-ENTROPY-ALONE-UNIVERSAL",
+      "query": "Strict single-descriptor interpretation of path entropy across materials Path entropy alone is sufficient to uniquely assess or predict ionic conductivity across diverse inorganic ionic conductors. a deliberately strict operational interpretation of the paper's statements that path entropy is a quantitatively robust and universal metric; it does not attribute an exact deterministic law to the authors",
+      "ranked_passages": [
+        {
+          "doc_id": "paper_guan_2026",
+          "passage_id": "paper_guan_2026:0",
+          "rank": 1,
+          "score": 37.171379154258105
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:0",
+          "rank": 2,
+          "score": 32.60438203730022
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:1",
+          "rank": 3,
+          "score": 22.240217984185474
+        },
+        {
+          "doc_id": "paper_deng_2022",
+          "passage_id": "paper_deng_2022:0",
+          "rank": 4,
+          "score": 19.49593621268023
+        },
+        {
+          "doc_id": "paper_poletayev_2022",
+          "passage_id": "paper_poletayev_2022:0",
+          "rank": 5,
+          "score": 15.64597823030199
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:0",
+          "rank": 6,
+          "score": 11.577077679169399
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:2",
+          "rank": 7,
+          "score": 9.049661246544357
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:3",
+          "rank": 8,
+          "score": 7.795745199873336
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:4",
+          "rank": 9,
+          "score": 7.564114315569143
+        },
+        {
+          "doc_id": "paper_ji_2023",
+          "passage_id": "paper_ji_2023:0",
+          "rank": 10,
+          "score": 7.5092708295673
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:4",
+          "rank": 11,
+          "score": 4.970579696279434
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:1",
+          "rank": 12,
+          "score": 4.90167594581963
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:0",
+          "rank": 13,
+          "score": 4.802491093808598
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:3",
+          "rank": 14,
+          "score": 2.8978069935898465
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:2",
+          "rank": 15,
+          "score": 2.4873443383480343
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:1",
+          "rank": 16,
+          "score": 2.2801246834447704
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:5",
+          "rank": 17,
+          "score": 2.1211496812056754
+        },
+        {
+          "doc_id": "repo_deng_2022",
+          "passage_id": "repo_deng_2022:0",
+          "rank": 18,
+          "score": 2.072356611470126
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:2",
+          "rank": 19,
+          "score": 1.4892418013457953
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:5",
+          "rank": 20,
+          "score": 0.808795943958155
+        }
+      ],
+      "relevant_doc_ids": [
+        "paper_guan_2026",
+        "repo_guan_2026"
+      ]
+    },
+    {
+      "claim_id": "DENG-2022-NASICON-INITIAL-RATE-REPRODUCTION",
+      "query": "The public NASICON initializer yields distinct initial rate sums for two same-composition configurations At comp=0.2 (Na3.4Zr2Si2.4P0.6O12) and 573 K, a deterministic scan of all 50 public configurations finds 14 pairs within 0.25 meV in mean active-event barrier. The exploratory maximum-rate-ratio pair, structures 48 and 49, yields mean barriers of 317.094 and 316.886 meV and aggregate initial hopping rates of 3.987 and 2.676 times 10^15 per second, respectively. the pinned public 8x8x8 initial configurations, fitted cluster expansions, event catalogue, attempt frequency, and code at commit 69eb10b7c52ddd85e39ebeb882b2e4ea617e7770; stochastic trajectory evolution and conductivity are excluded",
+      "ranked_passages": [
+        {
+          "doc_id": "paper_deng_2022",
+          "passage_id": "paper_deng_2022:0",
+          "rank": 1,
+          "score": 36.695531435470805
+        },
+        {
+          "doc_id": "repo_deng_2022",
+          "passage_id": "repo_deng_2022:0",
+          "rank": 2,
+          "score": 32.399607550183646
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:3",
+          "rank": 3,
+          "score": 19.959561356133882
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:2",
+          "rank": 4,
+          "score": 19.941777218160404
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:4",
+          "rank": 5,
+          "score": 16.609796079820146
+        },
+        {
+          "doc_id": "paper_poletayev_2022",
+          "passage_id": "paper_poletayev_2022:0",
+          "rank": 6,
+          "score": 13.877831241271938
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:3",
+          "rank": 7,
+          "score": 12.871489984027937
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:0",
+          "rank": 8,
+          "score": 12.628018910612326
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:0",
+          "rank": 9,
+          "score": 12.444251281246457
+        },
+        {
+          "doc_id": "paper_ji_2023",
+          "passage_id": "paper_ji_2023:0",
+          "rank": 10,
+          "score": 12.0326901018577
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:1",
+          "rank": 11,
+          "score": 11.898898857339383
+        },
+        {
+          "doc_id": "paper_guan_2026",
+          "passage_id": "paper_guan_2026:0",
+          "rank": 12,
+          "score": 11.839575064522448
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:1",
+          "rank": 13,
+          "score": 10.911535266210173
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:1",
+          "rank": 14,
+          "score": 10.21944194074156
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:0",
+          "rank": 15,
+          "score": 9.32604859498276
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:5",
+          "rank": 16,
+          "score": 8.667153182051067
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:4",
+          "rank": 17,
+          "score": 8.146850069978544
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:5",
+          "rank": 18,
+          "score": 5.035726060633906
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:2",
+          "rank": 19,
+          "score": 3.96418897546282
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:2",
+          "rank": 20,
+          "score": 3.768834331675626
+        }
+      ],
+      "relevant_doc_ids": [
+        "paper_deng_2022",
+        "repo_deng_2022"
+      ]
+    },
+    {
+      "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-INITIAL-RATE",
+      "query": "Mean migration barrier alone identifies aggregate initial hopping rate At fixed NASICON composition and temperature, a mean migration-barrier summary alone is sufficient to identify the aggregate initial hopping rate. a deliberately strict intermediate-target stress test motivated by common barrier-to-rate promotions; not a verbatim claim by Deng et al., whose full model retains event-level barrier heterogeneity and occupancy",
+      "ranked_passages": [
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:3",
+          "rank": 1,
+          "score": 13.290102473274006
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:0",
+          "rank": 2,
+          "score": 13.281611470196234
+        },
+        {
+          "doc_id": "repo_deng_2022",
+          "passage_id": "repo_deng_2022:0",
+          "rank": 3,
+          "score": 13.165393418814757
+        },
+        {
+          "doc_id": "paper_ji_2023",
+          "passage_id": "paper_ji_2023:0",
+          "rank": 4,
+          "score": 11.630459007809907
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:4",
+          "rank": 5,
+          "score": 11.592258218108796
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:2",
+          "rank": 6,
+          "score": 11.407122235728487
+        },
+        {
+          "doc_id": "paper_deng_2022",
+          "passage_id": "paper_deng_2022:0",
+          "rank": 7,
+          "score": 11.402346417309873
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:3",
+          "rank": 8,
+          "score": 11.334339577644506
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:0",
+          "rank": 9,
+          "score": 10.262037271565669
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:0",
+          "rank": 10,
+          "score": 7.414712354010692
+        },
+        {
+          "doc_id": "paper_guan_2026",
+          "passage_id": "paper_guan_2026:0",
+          "rank": 11,
+          "score": 7.375394090471469
+        },
+        {
+          "doc_id": "paper_poletayev_2022",
+          "passage_id": "paper_poletayev_2022:0",
+          "rank": 12,
+          "score": 6.944918552394236
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:1",
+          "rank": 13,
+          "score": 6.485985290725437
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:1",
+          "rank": 14,
+          "score": 6.311028960377763
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:1",
+          "rank": 15,
+          "score": 6.002983548336836
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:2",
+          "rank": 16,
+          "score": 5.542673722707201
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:5",
+          "rank": 17,
+          "score": 4.4408426032529915
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:2",
+          "rank": 18,
+          "score": 3.6134044694720404
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:4",
+          "rank": 19,
+          "score": 2.843108815296962
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:5",
+          "rank": 20,
+          "score": 2.040177105816932
+        }
+      ],
+      "relevant_doc_ids": [
+        "paper_deng_2022",
+        "repo_deng_2022"
+      ]
+    },
+    {
+      "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-CONDUCTIVITY",
+      "query": "Mean migration barrier alone identifies macroscopic ionic conductivity At fixed NASICON composition and temperature, the mean migration barrier alone is sufficient to identify long-time macroscopic ionic conductivity. a strict barrier-to-conductivity promotion stress test; not a verbatim claim by Deng et al., whose simulations explicitly retain dynamic occupancy, spatial event structure, and correlated ion motion",
+      "ranked_passages": [
+        {
+          "doc_id": "paper_poletayev_2022",
+          "passage_id": "paper_poletayev_2022:0",
+          "rank": 1,
+          "score": 31.534559911734505
+        },
+        {
+          "doc_id": "paper_deng_2022",
+          "passage_id": "paper_deng_2022:0",
+          "rank": 2,
+          "score": 28.390929913287938
+        },
+        {
+          "doc_id": "paper_guan_2026",
+          "passage_id": "paper_guan_2026:0",
+          "rank": 3,
+          "score": 13.713425895161297
+        },
+        {
+          "doc_id": "repo_deng_2022",
+          "passage_id": "repo_deng_2022:0",
+          "rank": 4,
+          "score": 13.165393418814757
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:3",
+          "rank": 5,
+          "score": 11.792085496534126
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:0",
+          "rank": 6,
+          "score": 10.161257401843363
+        },
+        {
+          "doc_id": "paper_ji_2023",
+          "passage_id": "paper_ji_2023:0",
+          "rank": 7,
+          "score": 9.929380514627514
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:0",
+          "rank": 8,
+          "score": 9.904347312347243
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:0",
+          "rank": 9,
+          "score": 9.843231862851722
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:2",
+          "rank": 10,
+          "score": 7.855247972779525
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:2",
+          "rank": 11,
+          "score": 6.948420840093268
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:3",
+          "rank": 12,
+          "score": 6.794155267603319
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:1",
+          "rank": 13,
+          "score": 6.002983548336836
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:1",
+          "rank": 14,
+          "score": 5.811705831489554
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:4",
+          "rank": 15,
+          "score": 5.5746043425253005
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:1",
+          "rank": 16,
+          "score": 3.4974483541548804
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:2",
+          "rank": 17,
+          "score": 2.362835849339872
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:4",
+          "rank": 18,
+          "score": 2.295747779094968
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:5",
+          "rank": 19,
+          "score": 1.5181841244006125
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:5",
+          "rank": 20,
+          "score": 0.0
+        }
+      ],
+      "relevant_doc_ids": [
+        "paper_deng_2022",
+        "repo_deng_2022"
+      ]
+    },
+    {
+      "claim_id": "JI-2023-LINEAR-EIS-ELECTRODE-ALLOCATION",
+      "query": "Linear full-cell EIS alone uniquely allocates electrode contributions Within the declared two-electrode additive model, a full-cell linear EIS observation uniquely identifies the separate positive- and negative-electrode contributions. the sum-versus-difference measurement structure described by the 2nd-NLEIS work; practical noise, broader circuit families, and general battery causality are outside the formal witness",
+      "ranked_passages": [
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:1",
+          "rank": 1,
+          "score": 41.66071642536982
+        },
+        {
+          "doc_id": "paper_ji_2023",
+          "passage_id": "paper_ji_2023:0",
+          "rank": 2,
+          "score": 38.11225453569084
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:2",
+          "rank": 3,
+          "score": 35.36210745287556
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:0",
+          "rank": 4,
+          "score": 21.091672439972463
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:3",
+          "rank": 5,
+          "score": 16.107356180370715
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:3",
+          "rank": 6,
+          "score": 7.567084788850857
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:0",
+          "rank": 7,
+          "score": 7.194241669875897
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:5",
+          "rank": 8,
+          "score": 7.092142324346396
+        },
+        {
+          "doc_id": "paper_guan_2026",
+          "passage_id": "paper_guan_2026:0",
+          "rank": 9,
+          "score": 6.714540050081637
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:1",
+          "rank": 10,
+          "score": 6.616709613097224
+        },
+        {
+          "doc_id": "repo_ji_2023",
+          "passage_id": "repo_ji_2023:4",
+          "rank": 11,
+          "score": 6.611496935739064
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:2",
+          "rank": 12,
+          "score": 6.56306326910117
+        },
+        {
+          "doc_id": "paper_poletayev_2022",
+          "passage_id": "paper_poletayev_2022:0",
+          "rank": 13,
+          "score": 6.394069530496203
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:4",
+          "rank": 14,
+          "score": 4.868406155526168
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:0",
+          "rank": 15,
+          "score": 4.005581171503995
+        },
+        {
+          "doc_id": "paper_deng_2022",
+          "passage_id": "paper_deng_2022:0",
+          "rank": 16,
+          "score": 3.737045023283404
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:1",
+          "rank": 17,
+          "score": 2.6174985354836715
+        },
+        {
+          "doc_id": "repo_guan_2026",
+          "passage_id": "repo_guan_2026:2",
+          "rank": 18,
+          "score": 2.457270161322509
+        },
+        {
+          "doc_id": "repo_deng_2022",
+          "passage_id": "repo_deng_2022:0",
+          "rank": 19,
+          "score": 0.5885858259255143
+        },
+        {
+          "doc_id": "repo_poletayev_2022",
+          "passage_id": "repo_poletayev_2022:5",
+          "rank": 20,
+          "score": 0.0
+        }
+      ],
+      "relevant_doc_ids": [
+        "paper_ji_2023",
+        "repo_ji_2023"
+      ]
+    }
+  ],
+  "schema_version": "arc-public-micro-rag-pilot-0.1",
+  "scope_warning": "Small-corpus source-grounded RAG feasibility pilot. The source pool contains the four known case papers and their four repositories, and the labels are system case audits rather than independent expert gold. Results cannot estimate open-corpus retrieval or population-level scientific accuracy.",
+  "seed": 1701,
+  "traces": [
+    {
+      "arm": "ollama_qwen3_5_4b_micro_rag",
+      "claim_id": "POLETAYEV-2022-SUBDIFFUSION-OBSERVABLE",
+      "prediction": {
+        "arm": "ollama_qwen3_5_4b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "POLETAYEV-2022-SUBDIFFUSION-OBSERVABLE",
+        "confidence": 0.95,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "repo_poletayev_2022:4",
+          "repo_poletayev_2022:0",
+          "repo_poletayev_2022:2",
+          "repo_poletayev_2022:3"
+        ],
+        "failure_code": null,
+        "identifiability": "underdetermined",
+        "paper_id": "POLETAYEV-2022-SUBDIFFUSION-OBSERVABLE",
+        "promotion_ceiling": "proposal_only",
+        "seed": 1701
+      },
+      "rationale": "The claim asserts a specific scaling behavior (sublinear MSD) over a specific time window (10k-50k ps). While the retrieved passages confirm the existence of sample data for Na and Ag beta-alumina at 300 K and describe scripts capable of computing Mean-Squared Displacement (MSD), they do not provide the actual CSV files containing the trajectory data or the computed MSD values within the specified time window. The README states that 'most figure-making blocks/cells will not immediately run' due to GitHub size constraints, implying the full analysis pipeline is not executed in the provided text. Without the raw data points or the resulting plot/numerical fit for the 10k-50k ps range, it is impossible to verify if the scaling is indeed sublinear or to confirm the specific slope. The claim describes a result that cannot be derived from the supplied information alone.",
+      "retrieved_passage_ids": [
+        "repo_poletayev_2022:4",
+        "repo_poletayev_2022:0",
+        "repo_poletayev_2022:2",
+        "repo_poletayev_2022:3"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 4.040901333002694,
+        "eval_count": 243,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 1908,
+        "raw_content": "{\n  \"identifiability\": \"underdetermined\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"proposal_only\",\n  \"confidence\": 0.95,\n  \"rationale\": \"The claim asserts a specific scaling behavior (sublinear MSD) over a specific time window (10k-50k ps). While the retrieved passages confirm the existence of sample data for Na and Ag beta-alumina at 300 K and describe scripts capable of computing Mean-Squared Displacement (MSD), they do not provide the actual CSV files containing the trajectory data or the computed MSD values within the specified time window. The README states that 'most figure-making blocks/cells will not immediately run' due to GitHub size constraints, implying the full analysis pipeline is not executed in the provided text. Without the raw data points or the resulting plot/numerical fit for the 10k-50k ps range, it is impossible to verify if the scaling is indeed sublinear or to confirm the specific slope. The claim describes a result that cannot be derived from the supplied information alone.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_5_4b_micro_rag",
+      "claim_id": "POLETAYEV-2022-PROCESSING-DEFECT-CAUSE",
+      "prediction": {
+        "arm": "ollama_qwen3_5_4b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "POLETAYEV-2022-PROCESSING-DEFECT-CAUSE",
+        "confidence": 0.45,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "paper_poletayev_2022:0",
+          "repo_poletayev_2022:0",
+          "repo_poletayev_2022:2",
+          "repo_ji_2023:0"
+        ],
+        "failure_code": null,
+        "identifiability": "underdetermined",
+        "paper_id": "POLETAYEV-2022-PROCESSING-DEFECT-CAUSE",
+        "promotion_ceiling": "proposal_only",
+        "seed": 1701
+      },
+      "rationale": "The claim asserts a causal link between processing-induced defect distributions and persistent subdiffusion in *physical* beta-aluminas. The retrieved evidence (Poletayev et al., 2022) explicitly states that the work uses 'large-scale simulations' to reproduce AC conductivity data and proposes a framework for 'atoms-to-device' modeling. While the paper claims to connect atomistic chemistry to macroscopic performance, it relies on simulated defect configurations rather than experimental characterization of physical specimens. The repository confirms the use of LAMMPS for generating quasi-random defect structures and simulating hopping events, but does not provide empirical data from physical beta-alumina samples. Consequently, the causal mechanism described is identified only within the context of the simulation model, not as an empirically verified fact regarding physical materials. The claim extends beyond the scope of the provided evidence (simulation vs. physical specimen), rendering the causal assertion underdetermined by the supplied information.",
+      "retrieved_passage_ids": [
+        "paper_poletayev_2022:0",
+        "repo_poletayev_2022:0",
+        "repo_poletayev_2022:2",
+        "repo_ji_2023:0"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 7.020241083002475,
+        "eval_count": 249,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 1939,
+        "raw_content": "{\n  \"identifiability\": \"underdetermined\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"proposal_only\",\n  \"confidence\": 0.45,\n  \"rationale\": \"The claim asserts a causal link between processing-induced defect distributions and persistent subdiffusion in *physical* beta-aluminas. The retrieved evidence (Poletayev et al., 2022) explicitly states that the work uses 'large-scale simulations' to reproduce AC conductivity data and proposes a framework for 'atoms-to-device' modeling. While the paper claims to connect atomistic chemistry to macroscopic performance, it relies on simulated defect configurations rather than experimental characterization of physical specimens. The repository confirms the use of LAMMPS for generating quasi-random defect structures and simulating hopping events, but does not provide empirical data from physical beta-alumina samples. Consequently, the causal mechanism described is identified only within the context of the simulation model, not as an empirically verified fact regarding physical materials. The claim extends beyond the scope of the provided evidence (simulation vs. physical specimen), rendering the causal assertion underdetermined by the supplied information.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_5_4b_micro_rag",
+      "claim_id": "GUAN-2026-LPSCLII-PATH-ENTROPY-REPRODUCTION",
+      "prediction": {
+        "arm": "ollama_qwen3_5_4b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "GUAN-2026-LPSCLII-PATH-ENTROPY-REPRODUCTION",
+        "confidence": 0.85,
+        "decision": "supported",
+        "evidence_ids": [
+          "repo_guan_2026:1",
+          "repo_guan_2026:0",
+          "paper_guan_2026:0",
+          "repo_ji_2023:4"
+        ],
+        "failure_code": null,
+        "identifiability": "underdetermined",
+        "paper_id": "GUAN-2026-LPSCLII-PATH-ENTROPY-REPRODUCTION",
+        "promotion_ceiling": "source_scoped_support_only",
+        "seed": 1701
+      },
+      "rationale": "The claim asserts that a specific public demo reproduces a numerical result (415.72 \u00b1 6.02 J/mol/K) reported in the paper. The retrieved evidence confirms the existence of the 'public precomputed LPSCl-II discrete trajectories' and the 'eSSE' package capable of running the analysis, but it does not contain the actual execution logs or the specific output value from the demo. The claim relies on the user's ability to run the code against the provided data to verify the result. Since the empirical verification (running the code) is outside the scope of the supplied text passages, the decision is underdetermined regarding the *mechanism* of reproduction, but supported by the presence of the necessary tools and data described in the README.",
+      "retrieved_passage_ids": [
+        "repo_guan_2026:1",
+        "repo_guan_2026:0",
+        "paper_guan_2026:0",
+        "repo_ji_2023:4"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 5.712782500002504,
+        "eval_count": 214,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 2061,
+        "raw_content": "{\n  \"identifiability\": \"underdetermined\",\n  \"decision\": \"supported\",\n  \"promotion_ceiling\": \"source_scoped_support_only\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The claim asserts that a specific public demo reproduces a numerical result (415.72 \u00b1 6.02 J/mol/K) reported in the paper. The retrieved evidence confirms the existence of the 'public precomputed LPSCl-II discrete trajectories' and the 'eSSE' package capable of running the analysis, but it does not contain the actual execution logs or the specific output value from the demo. The claim relies on the user's ability to run the code against the provided data to verify the result. Since the empirical verification (running the code) is outside the scope of the supplied text passages, the decision is underdetermined regarding the *mechanism* of reproduction, but supported by the presence of the necessary tools and data described in the README.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_5_4b_micro_rag",
+      "claim_id": "GUAN-2026-PATH-ENTROPY-ALONE-UNIVERSAL",
+      "prediction": {
+        "arm": "ollama_qwen3_5_4b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "GUAN-2026-PATH-ENTROPY-ALONE-UNIVERSAL",
+        "confidence": 0.85,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "paper_guan_2026:0",
+          "repo_guan_2026:0",
+          "repo_guan_2026:1",
+          "paper_deng_2022:0"
+        ],
+        "failure_code": null,
+        "identifiability": "underdetermined",
+        "paper_id": "GUAN-2026-PATH-ENTROPY-ALONE-UNIVERSAL",
+        "promotion_ceiling": "proposal_only",
+        "seed": 1701
+      },
+      "rationale": "The claim asserts that 'path entropy alone' is sufficient to 'uniquely assess or predict' ionic conductivity across diverse materials. The retrieved evidence supports the utility of path entropy (Sp) as a descriptor for diffusion pathway diversity and its correlation with conduction in specific systems (e.g., lithium thiophosphates, NASICON). However, the text explicitly states that current entropy descriptions are 'incomplete' because they neglect conductive ion-induced disorder. While the authors propose Sp to address this, the provided passages do not demonstrate that Sp is *sufficient* on its own for *all* diverse inorganic ionic conductors, nor do they establish a unique deterministic law where no other factors (e.g., local environment, specific ion types) are needed. The claim generalizes a proposed descriptor's applicability beyond the specific validated cases and the acknowledged limitations of prior work. Therefore, the information is insufficient to confirm sufficiency or uniqueness across the broad scope claimed.",
+      "retrieved_passage_ids": [
+        "paper_guan_2026:0",
+        "repo_guan_2026:0",
+        "repo_guan_2026:1",
+        "paper_deng_2022:0"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 6.790977999997267,
+        "eval_count": 255,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 2110,
+        "raw_content": "{\n  \"identifiability\": \"underdetermined\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"proposal_only\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The claim asserts that 'path entropy alone' is sufficient to 'uniquely assess or predict' ionic conductivity across diverse materials. The retrieved evidence supports the utility of path entropy (Sp) as a descriptor for diffusion pathway diversity and its correlation with conduction in specific systems (e.g., lithium thiophosphates, NASICON). However, the text explicitly states that current entropy descriptions are 'incomplete' because they neglect conductive ion-induced disorder. While the authors propose Sp to address this, the provided passages do not demonstrate that Sp is *sufficient* on its own for *all* diverse inorganic ionic conductors, nor do they establish a unique deterministic law where no other factors (e.g., local environment, specific ion types) are needed. The claim generalizes a proposed descriptor's applicability beyond the specific validated cases and the acknowledged limitations of prior work. Therefore, the information is insufficient to confirm sufficiency or uniqueness across the broad scope claimed.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_5_4b_micro_rag",
+      "claim_id": "DENG-2022-NASICON-INITIAL-RATE-REPRODUCTION",
+      "prediction": {
+        "arm": "ollama_qwen3_5_4b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "DENG-2022-NASICON-INITIAL-RATE-REPRODUCTION",
+        "confidence": 0.45,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "paper_deng_2022:0",
+          "repo_deng_2022:0",
+          "repo_poletayev_2022:3",
+          "repo_poletayev_2022:2"
+        ],
+        "failure_code": null,
+        "identifiability": "underdetermined",
+        "paper_id": "DENG-2022-NASICON-INITIAL-RATE-REPRODUCTION",
+        "promotion_ceiling": "proposal_only",
+        "seed": 1701
+      },
+      "rationale": "Malformed constrained JSON; required audit fields were uniquely regex-recovered.",
+      "retrieved_passage_ids": [
+        "paper_deng_2022:0",
+        "repo_deng_2022:0",
+        "repo_poletayev_2022:3",
+        "repo_poletayev_2022:2"
+      ],
+      "runtime": {
+        "done_reason": "length",
+        "elapsed_seconds": 7.078995125000802,
+        "eval_count": 256,
+        "parse_error": "Expecting ',' delimiter: line 6 column 1039 (char 1172)",
+        "parse_status": "regex_recovered",
+        "prompt_eval_count": 2081,
+        "raw_content": "{\n  \"identifiability\": \"underdetermined\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"proposal_only\",\n  \"confidence\": 0.45,\n  \"rationale\": \"The claim asserts a specific numerical result (14 pairs within 0.25 meV; specific barrier values and rate ratios for structures 48/49) derived from a deterministic scan of 'all 50 public configurations'. However, the retrieved evidence consists only of high-level repository README files describing the software stack (LAMMPS, python scripts) and general methodology (hopping event identification via boundary crossings). There is no direct passage containing the specific numerical outputs, the list of the 50 configurations, or the results of the scan at comp=0.2 and T=573 K. The code snippets describe *how* to run simulations but do not provide the *output* of the specific run described in the claim. Consequently, while the claim is internally consistent as a hypothesis about reproducible data, the supplied information is insufficient to verify the specific numbers or confirm that the deterministic scan actually produced those results without ambiguity regarding the execution environment or hidden parameters.\""
+      }
+    },
+    {
+      "arm": "ollama_qwen3_5_4b_micro_rag",
+      "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-INITIAL-RATE",
+      "prediction": {
+        "arm": "ollama_qwen3_5_4b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-INITIAL-RATE",
+        "confidence": 0.15,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "repo_ji_2023:3",
+          "repo_poletayev_2022:0",
+          "repo_deng_2022:0",
+          "paper_ji_2023:0"
+        ],
+        "failure_code": null,
+        "identifiability": "underdetermined",
+        "paper_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-INITIAL-RATE",
+        "promotion_ceiling": "proposal_only",
+        "seed": 1701
+      },
+      "rationale": "The claim asserts that a 'mean migration-barrier summary alone' is sufficient to identify the 'aggregate initial hopping rate'. The retrieved passages confirm the existence of KMC simulations (Deng et al.) and NLEIS analysis (Ji et al.), but none explicitly state the sufficiency of mean barriers for identifying aggregate rates. Ji et al. discuss fitting parameters and error metrics, while Deng et al. provide simulation inputs. There is no evidence in the text confirming that mean barriers uniquely determine the rate without considering heterogeneity or occupancy effects mentioned in the query scope. The claim relies on an unstated assumption about model reduction that cannot be verified from the provided snippets.",
+      "retrieved_passage_ids": [
+        "repo_ji_2023:3",
+        "repo_poletayev_2022:0",
+        "repo_deng_2022:0",
+        "paper_ji_2023:0"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 9.550531207998574,
+        "eval_count": 193,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 1765,
+        "raw_content": "{\n  \"identifiability\": \"underdetermined\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"proposal_only\",\n  \"confidence\": 0.15,\n  \"rationale\": \"The claim asserts that a 'mean migration-barrier summary alone' is sufficient to identify the 'aggregate initial hopping rate'. The retrieved passages confirm the existence of KMC simulations (Deng et al.) and NLEIS analysis (Ji et al.), but none explicitly state the sufficiency of mean barriers for identifying aggregate rates. Ji et al. discuss fitting parameters and error metrics, while Deng et al. provide simulation inputs. There is no evidence in the text confirming that mean barriers uniquely determine the rate without considering heterogeneity or occupancy effects mentioned in the query scope. The claim relies on an unstated assumption about model reduction that cannot be verified from the provided snippets.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_5_4b_micro_rag",
+      "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-CONDUCTIVITY",
+      "prediction": {
+        "arm": "ollama_qwen3_5_4b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-CONDUCTIVITY",
+        "confidence": 0.45,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "paper_poletayev_2022:0",
+          "paper_deng_2022:0",
+          "paper_guan_2026:0",
+          "repo_deng_2022:0"
+        ],
+        "failure_code": null,
+        "identifiability": "underdetermined",
+        "paper_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-CONDUCTIVITY",
+        "promotion_ceiling": "unverified_source_only",
+        "seed": 1701
+      },
+      "rationale": "Malformed constrained JSON; required audit fields were uniquely regex-recovered.",
+      "retrieved_passage_ids": [
+        "paper_poletayev_2022:0",
+        "paper_deng_2022:0",
+        "paper_guan_2026:0",
+        "repo_deng_2022:0"
+      ],
+      "runtime": {
+        "done_reason": "length",
+        "elapsed_seconds": 11.341849958000239,
+        "eval_count": 256,
+        "parse_error": "Unterminated string starting at: line 6 column 16 (char 158)",
+        "parse_status": "regex_recovered",
+        "prompt_eval_count": 1899,
+        "raw_content": "{\n  \"identifiability\": \"underdetermined\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"unverified_source_only\",\n  \"confidence\": 0.45,\n  \"rationale\": \"The claim asserts that the mean migration barrier alone is sufficient to identify macroscopic conductivity. The retrieved evidence from Deng et al. (2022) and Poletayev et al. (2022) demonstrates that while migration barriers are critical, they do not act in isolation; factors such as dynamic occupancy, spatial event structure, correlated ion motion, and defect distribution significantly influence transport. Specifically, the claim text explicitly notes that Deng's simulations retain these complex dynamics, implying that a simple barrier metric is insufficient to capture the full physics without additional context. Furthermore, the provided repository code confirms the use of Kinetic Monte Carlo (KMC) methods which inherently model time-dependent processes beyond static barriers. The third document introduces 'path entropy' as a necessary descriptor, further indicating that barrier alone is an incomplete predictor. Therefore, the claim is not uniquely established by the evidence; it remains ambiguous whether the barrier *alone* is sufficient or if it requires coupling with other descriptors ("
+      }
+    },
+    {
+      "arm": "ollama_qwen3_5_4b_micro_rag",
+      "claim_id": "JI-2023-LINEAR-EIS-ELECTRODE-ALLOCATION",
+      "prediction": {
+        "arm": "ollama_qwen3_5_4b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "JI-2023-LINEAR-EIS-ELECTRODE-ALLOCATION",
+        "confidence": 0.95,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "repo_ji_2023:1",
+          "paper_ji_2023:0",
+          "repo_ji_2023:2",
+          "repo_ji_2023:0"
+        ],
+        "failure_code": null,
+        "identifiability": "underdetermined",
+        "paper_id": "JI-2023-LINEAR-EIS-ELECTRODE-ALLOCATION",
+        "promotion_ceiling": "proposal_only",
+        "seed": 1701
+      },
+      "rationale": "The claim asserts that 'full-cell linear EIS observation uniquely identifies' separate electrode contributions. The retrieved passages confirm that full-cell EIS is the sum of half-cell spectra and that simultaneous fitting with 2nd-NLEIS (the difference) improves parameter assignment and convergence. However, the text explicitly states that importing EIS best-fit parameters into the 2nd-NLEIS model fails to ensure robust convergence, implying that EIS alone does not yield a unique or self-consistent solution for individual electrode parameters without the additional constraint of 2nd-NLEIS data. Therefore, the claim that EIS *alone* uniquely identifies contributions is contradicted by the evidence that it requires the complementary signal (2nd-NLEIS) to achieve robust identification.",
+      "retrieved_passage_ids": [
+        "repo_ji_2023:1",
+        "paper_ji_2023:0",
+        "repo_ji_2023:2",
+        "repo_ji_2023:0"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 9.61160204099724,
+        "eval_count": 211,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 1879,
+        "raw_content": "{\n  \"identifiability\": \"underdetermined\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"proposal_only\",\n  \"confidence\": 0.95,\n  \"rationale\": \"The claim asserts that 'full-cell linear EIS observation uniquely identifies' separate electrode contributions. The retrieved passages confirm that full-cell EIS is the sum of half-cell spectra and that simultaneous fitting with 2nd-NLEIS (the difference) improves parameter assignment and convergence. However, the text explicitly states that importing EIS best-fit parameters into the 2nd-NLEIS model fails to ensure robust convergence, implying that EIS alone does not yield a unique or self-consistent solution for individual electrode parameters without the additional constraint of 2nd-NLEIS data. Therefore, the claim that EIS *alone* uniquely identifies contributions is contradicted by the evidence that it requires the complementary signal (2nd-NLEIS) to achieve robust identification.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_8b_micro_rag",
+      "claim_id": "POLETAYEV-2022-SUBDIFFUSION-OBSERVABLE",
+      "prediction": {
+        "arm": "ollama_qwen3_8b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "POLETAYEV-2022-SUBDIFFUSION-OBSERVABLE",
+        "confidence": 0.1,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "repo_poletayev_2022:4",
+          "repo_poletayev_2022:0",
+          "repo_poletayev_2022:2",
+          "repo_poletayev_2022:3"
+        ],
+        "failure_code": null,
+        "identifiability": "non_identifiable",
+        "paper_id": "POLETAYEV-2022-SUBDIFFUSION-OBSERVABLE",
+        "promotion_ceiling": "unverified_source_only",
+        "seed": 1701
+      },
+      "rationale": "The claim references specific sample data and analysis methods, but the retrieved passages do not provide direct evidence of the sublinear mean-squared-displacement scaling over the specified time range. The passages describe the availability of sample data and analysis scripts but do not confirm the results or provide the necessary details to identify the claim as uniquely supported. The claim remains unverified due to insufficient information to determine its truth status.",
+      "retrieved_passage_ids": [
+        "repo_poletayev_2022:4",
+        "repo_poletayev_2022:0",
+        "repo_poletayev_2022:2",
+        "repo_poletayev_2022:3"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 16.333782334000716,
+        "eval_count": 130,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 1867,
+        "raw_content": "{\n  \"identifiability\": \"non_identifiable\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"unverified_source_only\",\n  \"confidence\": 0.1,\n  \"rationale\": \"The claim references specific sample data and analysis methods, but the retrieved passages do not provide direct evidence of the sublinear mean-squared-displacement scaling over the specified time range. The passages describe the availability of sample data and analysis scripts but do not confirm the results or provide the necessary details to identify the claim as uniquely supported. The claim remains unverified due to insufficient information to determine its truth status.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_8b_micro_rag",
+      "claim_id": "POLETAYEV-2022-PROCESSING-DEFECT-CAUSE",
+      "prediction": {
+        "arm": "ollama_qwen3_8b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "POLETAYEV-2022-PROCESSING-DEFECT-CAUSE",
+        "confidence": 0.3,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "paper_poletayev_2022:0",
+          "repo_poletayev_2022:0",
+          "repo_poletayev_2022:2",
+          "repo_ji_2023:0"
+        ],
+        "failure_code": null,
+        "identifiability": "non_identifiable",
+        "paper_id": "POLETAYEV-2022-PROCESSING-DEFECT-CAUSE",
+        "promotion_ceiling": "source_scoped_support_only",
+        "seed": 1701
+      },
+      "rationale": "The claim asserts a causal relationship between processing-induced defect distributions and persistent subdiffusive transport in physical beta-aluminas. The retrieved passage from the paper supports that processing modulates defect distributions, which drive static and dynamic disorder and lead to persistent subdiffusive ion transport. However, the passage does not establish a unique mechanism or rule out alternative explanations for the observed transport behavior. The claim extends from simulated defect configurations to physical specimens, which introduces ambiguity about whether the same mechanisms apply externally. The repository information confirms the use of LAMMPS simulations but does not provide direct evidence for the causal link in physical specimens. Thus, the claim is supported within the scope of the paper's findings but remains non-identifiable due to the lack of exclusion of alternative explanations and the extrapolation to physical systems.",
+      "retrieved_passage_ids": [
+        "paper_poletayev_2022:0",
+        "repo_poletayev_2022:0",
+        "repo_poletayev_2022:2",
+        "repo_ji_2023:0"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 15.962070624998887,
+        "eval_count": 211,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 1897,
+        "raw_content": "{\n  \"identifiability\": \"non_identifiable\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"source_scoped_support_only\",\n  \"confidence\": 0.3,\n  \"rationale\": \"The claim asserts a causal relationship between processing-induced defect distributions and persistent subdiffusive transport in physical beta-aluminas. The retrieved passage from the paper supports that processing modulates defect distributions, which drive static and dynamic disorder and lead to persistent subdiffusive ion transport. However, the passage does not establish a unique mechanism or rule out alternative explanations for the observed transport behavior. The claim extends from simulated defect configurations to physical specimens, which introduces ambiguity about whether the same mechanisms apply externally. The repository information confirms the use of LAMMPS simulations but does not provide direct evidence for the causal link in physical specimens. Thus, the claim is supported within the scope of the paper's findings but remains non-identifiable due to the lack of exclusion of alternative explanations and the extrapolation to physical systems.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_8b_micro_rag",
+      "claim_id": "GUAN-2026-LPSCLII-PATH-ENTROPY-REPRODUCTION",
+      "prediction": {
+        "arm": "ollama_qwen3_8b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "GUAN-2026-LPSCLII-PATH-ENTROPY-REPRODUCTION",
+        "confidence": 0.1,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "repo_guan_2026:1",
+          "repo_guan_2026:0",
+          "paper_guan_2026:0",
+          "repo_ji_2023:4"
+        ],
+        "failure_code": null,
+        "identifiability": "non_identifiable",
+        "paper_id": "GUAN-2026-LPSCLII-PATH-ENTROPY-REPRODUCTION",
+        "promotion_ceiling": "unverified_source_only",
+        "seed": 1701
+      },
+      "rationale": "The supplied information does not establish a unique mechanism or target value. The claim about reproducing path-entropies is not directly supported by the retrieved passages, which focus on repository setup, dependencies, and general descriptions of the eSSE package. There is no clear evidence or direct reference to the specific claim about reproducing the LPSCl-II path-entropy estimate. The claim remains unverified and cannot be confirmed or denied based on the provided information.",
+      "retrieved_passage_ids": [
+        "repo_guan_2026:1",
+        "repo_guan_2026:0",
+        "paper_guan_2026:0",
+        "repo_ji_2023:4"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 14.149297457999637,
+        "eval_count": 142,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 2023,
+        "raw_content": "{\n  \"identifiability\": \"non_identifiable\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"unverified_source_only\",\n  \"confidence\": 0.1,\n  \"rationale\": \"The supplied information does not establish a unique mechanism or target value. The claim about reproducing path-entropies is not directly supported by the retrieved passages, which focus on repository setup, dependencies, and general descriptions of the eSSE package. There is no clear evidence or direct reference to the specific claim about reproducing the LPSCl-II path-entropy estimate. The claim remains unverified and cannot be confirmed or denied based on the provided information.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_8b_micro_rag",
+      "claim_id": "GUAN-2026-PATH-ENTROPY-ALONE-UNIVERSAL",
+      "prediction": {
+        "arm": "ollama_qwen3_8b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "GUAN-2026-PATH-ENTROPY-ALONE-UNIVERSAL",
+        "confidence": 0.3,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "paper_guan_2026:0",
+          "repo_guan_2026:0",
+          "repo_guan_2026:1",
+          "paper_deng_2022:0"
+        ],
+        "failure_code": null,
+        "identifiability": "non_identifiable",
+        "paper_id": "GUAN-2026-PATH-ENTROPY-ALONE-UNIVERSAL",
+        "promotion_ceiling": "source_scoped_support_only",
+        "seed": 1701
+      },
+      "rationale": "The claim that 'path entropy alone is sufficient to uniquely assess or predict ionic conductivity across diverse inorganic ionic conductors' is not uniquely established by the provided information. The paper describes path entropy as a descriptor that quantifies diffusion pathway diversity and links it to ionic conduction, but it does not assert that path entropy alone is sufficient for unique assessment or prediction. The repository provides tools for path entropy analysis but does not confirm its universality. The claim is supported within the scope of the paper's statements but lacks the specificity to uniquely establish the claim across all inorganic ionic conductors. Thus, the claim is non-identifiable and requires further evidence to determine its validity.",
+      "retrieved_passage_ids": [
+        "paper_guan_2026:0",
+        "repo_guan_2026:0",
+        "repo_guan_2026:1",
+        "paper_deng_2022:0"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 16.125357958000677,
+        "eval_count": 190,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 2073,
+        "raw_content": "{\n  \"identifiability\": \"non_identifiable\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"source_scoped_support_only\",\n  \"confidence\": 0.3,\n  \"rationale\": \"The claim that 'path entropy alone is sufficient to uniquely assess or predict ionic conductivity across diverse inorganic ionic conductors' is not uniquely established by the provided information. The paper describes path entropy as a descriptor that quantifies diffusion pathway diversity and links it to ionic conduction, but it does not assert that path entropy alone is sufficient for unique assessment or prediction. The repository provides tools for path entropy analysis but does not confirm its universality. The claim is supported within the scope of the paper's statements but lacks the specificity to uniquely establish the claim across all inorganic ionic conductors. Thus, the claim is non-identifiable and requires further evidence to determine its validity.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_8b_micro_rag",
+      "claim_id": "DENG-2022-NASICON-INITIAL-RATE-REPRODUCTION",
+      "prediction": {
+        "arm": "ollama_qwen3_8b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "DENG-2022-NASICON-INITIAL-RATE-REPRODUCTION",
+        "confidence": 0.1,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "paper_deng_2022:0",
+          "repo_deng_2022:0",
+          "repo_poletayev_2022:3",
+          "repo_poletayev_2022:2"
+        ],
+        "failure_code": null,
+        "identifiability": "non_identifiable",
+        "paper_id": "DENG-2022-NASICON-INITIAL-RATE-REPRODUCTION",
+        "promotion_ceiling": "unverified_source_only",
+        "seed": 1701
+      },
+      "rationale": "The claim references a deterministic scan of 50 public configurations and identifies specific pairs with similar mean active-event barriers. However, the retrieved passages do not provide direct evidence or detailed methodology to confirm the claim's empirical validity. The repository READMEs describe simulation setups and data processing but do not validate the specific numerical results or the uniqueness of the identified configurations. The claim's empirical status remains ambiguous due to insufficient information to determine if the observed differences are due to the configurations or other factors.",
+      "retrieved_passage_ids": [
+        "paper_deng_2022:0",
+        "repo_deng_2022:0",
+        "repo_poletayev_2022:3",
+        "repo_poletayev_2022:2"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 14.268263082998601,
+        "eval_count": 146,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 2038,
+        "raw_content": "{\n  \"identifiability\": \"non_identifiable\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"unverified_source_only\",\n  \"confidence\": 0.1,\n  \"rationale\": \"The claim references a deterministic scan of 50 public configurations and identifies specific pairs with similar mean active-event barriers. However, the retrieved passages do not provide direct evidence or detailed methodology to confirm the claim's empirical validity. The repository READMEs describe simulation setups and data processing but do not validate the specific numerical results or the uniqueness of the identified configurations. The claim's empirical status remains ambiguous due to insufficient information to determine if the observed differences are due to the configurations or other factors.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_8b_micro_rag",
+      "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-INITIAL-RATE",
+      "prediction": {
+        "arm": "ollama_qwen3_8b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-INITIAL-RATE",
+        "confidence": 0.1,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "repo_ji_2023:3",
+          "repo_poletayev_2022:0",
+          "repo_deng_2022:0",
+          "paper_ji_2023:0"
+        ],
+        "failure_code": null,
+        "identifiability": "underdetermined",
+        "paper_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-INITIAL-RATE",
+        "promotion_ceiling": "unverified_source_only",
+        "seed": 1701
+      },
+      "rationale": "The supplied information does not provide sufficient evidence to determine whether a mean migration-barrier summary alone is sufficient to identify the aggregate initial hopping rate. The retrieved passages do not directly address the claim or provide empirical support for it. The claim appears to be a theoretical assertion that cannot be verified or falsified based on the provided sources.",
+      "retrieved_passage_ids": [
+        "repo_ji_2023:3",
+        "repo_poletayev_2022:0",
+        "repo_deng_2022:0",
+        "paper_ji_2023:0"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 11.448932916999183,
+        "eval_count": 115,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 1725,
+        "raw_content": "{\n  \"identifiability\": \"underdetermined\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"unverified_source_only\",\n  \"confidence\": 0.1,\n  \"rationale\": \"The supplied information does not provide sufficient evidence to determine whether a mean migration-barrier summary alone is sufficient to identify the aggregate initial hopping rate. The retrieved passages do not directly address the claim or provide empirical support for it. The claim appears to be a theoretical assertion that cannot be verified or falsified based on the provided sources.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_8b_micro_rag",
+      "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-CONDUCTIVITY",
+      "prediction": {
+        "arm": "ollama_qwen3_8b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-CONDUCTIVITY",
+        "confidence": 0.2,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "paper_poletayev_2022:0",
+          "paper_deng_2022:0",
+          "paper_guan_2026:0",
+          "repo_deng_2022:0"
+        ],
+        "failure_code": null,
+        "identifiability": "non_identifiable",
+        "paper_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-CONDUCTIVITY",
+        "promotion_ceiling": "unverified_source_only",
+        "seed": 1701
+      },
+      "rationale": "The claim that the mean migration barrier alone identifies macroscopic ionic conductivity is non-identifiable because the supplied information does not uniquely determine the target value. The retrieved passages emphasize the complexity of ionic conduction, involving factors like defect chemistry, dynamic occupancy, spatial event structure, and correlated ion motion. These factors are not accounted for in the claim, which assumes the mean migration barrier is sufficient. The simulations described in the retrieved passages explicitly retain these dynamic and structural elements, indicating that the mean migration barrier alone cannot uniquely identify conductivity. The claim is not supported by the evidence provided, and the source integrity cannot be verified independently.",
+      "retrieved_passage_ids": [
+        "paper_poletayev_2022:0",
+        "paper_deng_2022:0",
+        "paper_guan_2026:0",
+        "repo_deng_2022:0"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 14.79971687500074,
+        "eval_count": 176,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 1857,
+        "raw_content": "{\n  \"identifiability\": \"non_identifiable\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"unverified_source_only\",\n  \"confidence\": 0.2,\n  \"rationale\": \"The claim that the mean migration barrier alone identifies macroscopic ionic conductivity is non-identifiable because the supplied information does not uniquely determine the target value. The retrieved passages emphasize the complexity of ionic conduction, involving factors like defect chemistry, dynamic occupancy, spatial event structure, and correlated ion motion. These factors are not accounted for in the claim, which assumes the mean migration barrier is sufficient. The simulations described in the retrieved passages explicitly retain these dynamic and structural elements, indicating that the mean migration barrier alone cannot uniquely identify conductivity. The claim is not supported by the evidence provided, and the source integrity cannot be verified independently.\"\n}"
+      }
+    },
+    {
+      "arm": "ollama_qwen3_8b_micro_rag",
+      "claim_id": "JI-2023-LINEAR-EIS-ELECTRODE-ALLOCATION",
+      "prediction": {
+        "arm": "ollama_qwen3_8b_micro_rag",
+        "certificate_status": "not_attempted",
+        "claim_id": "JI-2023-LINEAR-EIS-ELECTRODE-ALLOCATION",
+        "confidence": 0.3,
+        "decision": "inconclusive",
+        "evidence_ids": [
+          "repo_ji_2023:1",
+          "paper_ji_2023:0",
+          "repo_ji_2023:2",
+          "repo_ji_2023:0"
+        ],
+        "failure_code": null,
+        "identifiability": "non_identifiable",
+        "paper_id": "JI-2023-LINEAR-EIS-ELECTRODE-ALLOCATION",
+        "promotion_ceiling": "source_scoped_support_only",
+        "seed": 1701
+      },
+      "rationale": "The claim asserts that a full-cell linear EIS observation uniquely identifies the separate positive- and negative-electrode contributions within a two-electrode additive model. The retrieved passages describe that the full-cell linear EIS signal arises from the sum of the half-cell spectra, while the 2nd-NLEIS signal arises from their difference. However, the passages do not establish that the linear EIS signal alone can uniquely identify the individual electrode contributions. The analysis of EIS and 2nd-NLEIS together is emphasized, suggesting that the linear EIS alone may not be sufficient to uniquely determine the contributions. Therefore, the claim is non-identifiable as the same observation (linear EIS) could be interpreted differently depending on the target (individual electrode contributions vs. full-cell behavior).",
+      "retrieved_passage_ids": [
+        "repo_ji_2023:1",
+        "paper_ji_2023:0",
+        "repo_ji_2023:2",
+        "repo_ji_2023:0"
+      ],
+      "runtime": {
+        "done_reason": "stop",
+        "elapsed_seconds": 16.211734625001554,
+        "eval_count": 211,
+        "parse_error": null,
+        "parse_status": "strict_json",
+        "prompt_eval_count": 1834,
+        "raw_content": "{\n  \"identifiability\": \"non_identifiable\",\n  \"decision\": \"inconclusive\",\n  \"promotion_ceiling\": \"source_scoped_support_only\",\n  \"confidence\": 0.3,\n  \"rationale\": \"The claim asserts that a full-cell linear EIS observation uniquely identifies the separate positive- and negative-electrode contributions within a two-electrode additive model. The retrieved passages describe that the full-cell linear EIS signal arises from the sum of the half-cell spectra, while the 2nd-NLEIS signal arises from their difference. However, the passages do not establish that the linear EIS signal alone can uniquely identify the individual electrode contributions. The analysis of EIS and 2nd-NLEIS together is emphasized, suggesting that the linear EIS alone may not be sufficient to uniquely determine the contributions. Therefore, the claim is non-identifiable as the same observation (linear EIS) could be interpreted differently depending on the target (individual electrode contributions vs. full-cell behavior).\"\n}"
+      }
+    }
+  ]
+}

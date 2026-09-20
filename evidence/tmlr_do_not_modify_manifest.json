@@ -1,0 +1,245 @@
+{
+  "files": [
+    {
+      "bytes": 662,
+      "path": "tmlr_do_not_modify/Dockerfile",
+      "sha256": "4fe880ac3e959b53ea714eeb27c669a7cb3c05958de1515f6188f8694c4a5b40"
+    },
+    {
+      "bytes": 539,
+      "path": "tmlr_do_not_modify/Gemfile",
+      "sha256": "2835e23ff24b59751e8e365118df3a59d867e0ae525b8685f1e2fa390c1a488b"
+    },
+    {
+      "bytes": 7568,
+      "path": "tmlr_do_not_modify/_config.yml",
+      "sha256": "3f1f178cac826cae2ca661be1acd69b59cfe618df6a52a29d86e011697ca0881"
+    },
+    {
+      "bytes": 6148,
+      "path": "tmlr_do_not_modify/_includes/.DS_Store",
+      "sha256": "f7ffa439a799ad429340b311cdd13392b7640a8421210494a32dfa59f5a54dcc"
+    },
+    {
+      "bytes": 1522,
+      "path": "tmlr_do_not_modify/_includes/figure.html",
+      "sha256": "9a04b6903c5ea370dd8f08cd76bb654170488c77a1b5aef6edb32597dd04683c"
+    },
+    {
+      "bytes": 1076,
+      "path": "tmlr_do_not_modify/_includes/footer.html",
+      "sha256": "561210c996090b9f4b4aacb26a88fd1f15e27975841d9db050b681a534cfa21f"
+    },
+    {
+      "bytes": 10698,
+      "path": "tmlr_do_not_modify/_includes/head.html",
+      "sha256": "9abad86d3c5f48b4cbc63208657dc1a16574e266bd50677a82f571b323ff5fb8"
+    },
+    {
+      "bytes": 3567,
+      "path": "tmlr_do_not_modify/_includes/header.html",
+      "sha256": "e2fbbc7f467b2d52df7bea0a71c6f13b33fbe6dc26c9c2306e916b01e168a6fc"
+    },
+    {
+      "bytes": 9802,
+      "path": "tmlr_do_not_modify/_includes/metadata.html",
+      "sha256": "37b2c0fe87025a6a1a012db52f1bb7a82ea6332310dc20e72f68d980adb9f350"
+    },
+    {
+      "bytes": 911,
+      "path": "tmlr_do_not_modify/_includes/pagination.html",
+      "sha256": "0b60d2d9c49a923fa721dd269392ef39ed59720710b17fea3c01cda7c0c1b658"
+    },
+    {
+      "bytes": 396,
+      "path": "tmlr_do_not_modify/_includes/scripts/bootstrap.html",
+      "sha256": "a15caebbe14c00ce492e51593fc487c6c03b568abd4e79ecb601e2f8b0ce6662"
+    },
+    {
+      "bytes": 187,
+      "path": "tmlr_do_not_modify/_includes/scripts/jquery.html",
+      "sha256": "38f2f7d28869fd3c14f6296436842b670cb9f908a984951f4616d72fb08fd9c5"
+    },
+    {
+      "bytes": 477,
+      "path": "tmlr_do_not_modify/_includes/scripts/masonry.html",
+      "sha256": "a7dcd85e08a211db4bd9212a8514c228fa6f0cb4352739ae9351bea2cc1bf885"
+    },
+    {
+      "bytes": 447,
+      "path": "tmlr_do_not_modify/_includes/scripts/mathjax.html",
+      "sha256": "05af3ad2e5e931cef011f4162e4b53a36d588de668ff5207c23211100b3cac52"
+    },
+    {
+      "bytes": 622,
+      "path": "tmlr_do_not_modify/_includes/scripts/misc.html",
+      "sha256": "7acf7512e718c604237e8878d6a5aca03772c369c22a26fd0df9cfe86042bfd5"
+    },
+    {
+      "bytes": 2083,
+      "path": "tmlr_do_not_modify/_layouts/about.html",
+      "sha256": "3167d05435a9d36418ff783e9a710e9f4a81e70a693359ac28cd86bac5446c58"
+    },
+    {
+      "bytes": 671,
+      "path": "tmlr_do_not_modify/_layouts/archive-category.html",
+      "sha256": "d557afdc07ae8d58752caeddcf7a4cd03a9dd3c7dc0953e466b6f4b772fb46b5"
+    },
+    {
+      "bytes": 672,
+      "path": "tmlr_do_not_modify/_layouts/archive-tag.html",
+      "sha256": "53064848a2d468597028e94fe11bfaca95a4dc762191b0ba1057ab0e18ae6925"
+    },
+    {
+      "bytes": 686,
+      "path": "tmlr_do_not_modify/_layouts/archive-year.html",
+      "sha256": "d97c8bad471c5f54c6014fb1b752030b306798393fa1a63979582aabacaa352d"
+    },
+    {
+      "bytes": 9102,
+      "path": "tmlr_do_not_modify/_layouts/bib.html",
+      "sha256": "574f73d98c1081b7f68a8d2fb3d9c8fc6c3a7b9c1375d8e222ad95eac55879e5"
+    },
+    {
+      "bytes": 881,
+      "path": "tmlr_do_not_modify/_layouts/default.html",
+      "sha256": "a7884c105d69b698f4eeec1c2832ea1302362f54e26b1dcf18023cdbc11fba4b"
+    },
+    {
+      "bytes": 5617,
+      "path": "tmlr_do_not_modify/_layouts/distill.html",
+      "sha256": "4c17adc1768f9e5cc3ac89a9cfe1709c41f8d5039146e0cb6141cf3c88e042f3"
+    },
+    {
+      "bytes": 12,
+      "path": "tmlr_do_not_modify/_layouts/none.html",
+      "sha256": "78db73fc08139851d7389e05a16e5086cff621f50968888ac5a1e3c3d9300120"
+    },
+    {
+      "bytes": 154,
+      "path": "tmlr_do_not_modify/_layouts/page.html",
+      "sha256": "d96a151cfa211e7c7110a7a567d614324f323a7aec543d1dcb6f4fdad30cb99f"
+    },
+    {
+      "bytes": 1446,
+      "path": "tmlr_do_not_modify/_layouts/post.html",
+      "sha256": "d0aabe7e213001b6a2a97b579f7a278666e12bd169cb090776274f34932f8eb2"
+    },
+    {
+      "bytes": 346,
+      "path": "tmlr_do_not_modify/_plugins/hideCustomBibtex.rb",
+      "sha256": "7d9093b10dd2e3966f1c163ebbc14bc16b30baa3fb0a5ee1af19588261c94c76"
+    },
+    {
+      "bytes": 12227,
+      "path": "tmlr_do_not_modify/_sass/_base.scss",
+      "sha256": "d0fd10b814dce36f9591a19c86a3120f5ce4c76099906e360ca41047607e48cd"
+    },
+    {
+      "bytes": 2886,
+      "path": "tmlr_do_not_modify/_sass/_distill.scss",
+      "sha256": "b6c97ebaada73b2122baae3f6feffa5a98c01747d05a2007ebbecfd52bdb1a33"
+    },
+    {
+      "bytes": 729,
+      "path": "tmlr_do_not_modify/_sass/_layout.scss",
+      "sha256": "cb3cac53b65b7207fb31c9c739dbb125a32f57b399d6d568eceb9144c1ae6f17"
+    },
+    {
+      "bytes": 926,
+      "path": "tmlr_do_not_modify/_sass/_themes.scss",
+      "sha256": "2acf6692dc223655f67004d256f444342fda75f93a47b20dd93c79c555292388"
+    },
+    {
+      "bytes": 1325,
+      "path": "tmlr_do_not_modify/_sass/_variables.scss",
+      "sha256": "63bed83a7f095d54e004035ee981864d89fba0e29223ed18b8e2a91458c9b983"
+    },
+    {
+      "bytes": 6148,
+      "path": "tmlr_do_not_modify/assets/.DS_Store",
+      "sha256": "edd8ae485ba337d1b05c4cdaf04ca959394405fea519b060330cc169f9a51c6e"
+    },
+    {
+      "bytes": 1285,
+      "path": "tmlr_do_not_modify/assets/css/main.css",
+      "sha256": "182132150a0c45fd889a9f769b9db2e55a9c7f2533f1df194bc61a8672352a24"
+    },
+    {
+      "bytes": 224,
+      "path": "tmlr_do_not_modify/assets/css/main.scss",
+      "sha256": "cdf721b3e7b0e3844496f0cfbdf1065130f8ede6c83e8110b246e8b2da97b8d6"
+    },
+    {
+      "bytes": 509,
+      "path": "tmlr_do_not_modify/assets/img/jmlr-favicon-16x16.png",
+      "sha256": "fbd96377a97a9d5efeaa6c96c79b25485a07e766148bb1a2c47da7bae7bb194a"
+    },
+    {
+      "bytes": 1437,
+      "path": "tmlr_do_not_modify/assets/img/jmlr-favicon-32x32.png",
+      "sha256": "bb1ba4bb7d5bf8aba1cb23e28d4fa77b2816fce45553f4ec672f928204389b17"
+    },
+    {
+      "bytes": 15406,
+      "path": "tmlr_do_not_modify/assets/img/tmlr-favicon.ico",
+      "sha256": "aebd38591878d17c25247053d36a5d34e2029eac65fc63c5ad289d9b3aa89ab8"
+    },
+    {
+      "bytes": 337,
+      "path": "tmlr_do_not_modify/assets/js/common.js",
+      "sha256": "3bcda6ab4c559d8e84cc04afb60424ad5b91f577f9aaa8697d23a7c9744cc5b1"
+    },
+    {
+      "bytes": 1687,
+      "path": "tmlr_do_not_modify/assets/js/distillpub/overrides.js",
+      "sha256": "3e69dcef3f6d52ff1ffb0686192307536d66e2b0e9d034c6422c084d74340ce9"
+    },
+    {
+      "bytes": 297805,
+      "path": "tmlr_do_not_modify/assets/js/distillpub/template.v2.js",
+      "sha256": "aefc51d8bbf5ef3d6aadc11b457a95d6c687b4e1d269c8e913068db65e60339a"
+    },
+    {
+      "bytes": 602453,
+      "path": "tmlr_do_not_modify/assets/js/distillpub/template.v2.js.map",
+      "sha256": "2e7902dfeb45cbd76749e8222377545d71e5ca16b45a2827e0d4a36bbd70d89d"
+    },
+    {
+      "bytes": 529294,
+      "path": "tmlr_do_not_modify/assets/js/distillpub/transforms.v2.js",
+      "sha256": "535b768b7df5ebc84a0b9b3509c8c618644d77183150451cd7d9950745d532ec"
+    },
+    {
+      "bytes": 1024816,
+      "path": "tmlr_do_not_modify/assets/js/distillpub/transforms.v2.js.map",
+      "sha256": "f4c4cbd4167209a706c0750b48dc01cb87a19b5d60c756863b056afaa92b48a6"
+    },
+    {
+      "bytes": 293,
+      "path": "tmlr_do_not_modify/assets/js/masonry.js",
+      "sha256": "752c3c82a380e860df03f3cd74aaf95bf6830cd63d1e6d01fec43e6ae69ba0ff"
+    },
+    {
+      "bytes": 1551,
+      "path": "tmlr_do_not_modify/assets/js/theme.js",
+      "sha256": "44080c588132c3f3ffec3fb8f626a443a78c32c0ce53fec6949d000bede622e9"
+    },
+    {
+      "bytes": 274,
+      "path": "tmlr_do_not_modify/assets/js/zoom.js",
+      "sha256": "60239b9f618cd1d1c8f9dc5345ab3a626f68f551a753e165e37a9596ce8e8ec0"
+    },
+    {
+      "bytes": 277,
+      "path": "tmlr_do_not_modify/bin/docker_run.sh",
+      "sha256": "14a6377299b57e5f9a45916361d25acc7d915ee800fa74d152f1ffb2fdb54243"
+    },
+    {
+      "bytes": 58,
+      "path": "tmlr_do_not_modify/index.md",
+      "sha256": "127d63dcc6e855eda822571ae0607ef8c417194cb406304b1295dea12f45384a"
+    }
+  ],
+  "schema_version": "tmlr-base-manifest-1"
+}

@@ -1,0 +1,162 @@
+{
+  "construction": "Keep the full-arm identifiability and empirical decision, but infer the assertion ceiling only from the decision label: supported->source_scoped_support_only, falsified->bounded_falsification_only, inconclusive->compatibility_only.",
+  "dataset_label": "public_deep_case_pilot_v0.1",
+  "metrics": {
+    "certificate_verification_rate": 1.0,
+    "decision_exact_match": 1.0,
+    "decision_macro_f1": 1.0,
+    "identifiability_exact_match": 1.0,
+    "identifiability_macro_f1": 1.0,
+    "joint_exact_match": 0.875,
+    "n_claims": 8,
+    "overclaim_rate": 0.125,
+    "promotion_ceiling_exact_match": 0.875
+  },
+  "n_claims": 8,
+  "predictions": [
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "POLETAYEV-2022-SUBDIFFUSION-OBSERVABLE",
+      "confidence": 1.0,
+      "decision": "supported",
+      "evidence_ids": [
+        "results/anomalous_transport_sample_reproduction_v0.1.json",
+        "https://doi.org/10.1038/s41563-022-01316-z"
+      ],
+      "failure_code": null,
+      "identifiability": "identified",
+      "paper_id": "POLETAYEV-2022-SUBDIFFUSION-OBSERVABLE",
+      "promotion_ceiling": "source_scoped_support_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "verified",
+      "claim_id": "POLETAYEV-2022-PROCESSING-DEFECT-CAUSE",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "results/anomalous_transport_sample_reproduction_v0.1.json",
+        "https://doi.org/10.1038/s41563-022-01316-z",
+        "https://github.com/apoletayev/anomalous_ion_conduction",
+        "results/transport_intervention_lean_receipt.json"
+      ],
+      "failure_code": null,
+      "identifiability": "non_identifiable",
+      "paper_id": "POLETAYEV-2022-PROCESSING-DEFECT-CAUSE",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "GUAN-2026-LPSCLII-PATH-ENTROPY-REPRODUCTION",
+      "confidence": 1.0,
+      "decision": "supported",
+      "evidence_ids": [
+        "results/path_entropy_demo_reproduction_v0.1.json",
+        "https://doi.org/10.1038/s41467-026-71316-z",
+        "https://github.com/DXiming/entropy-driven-SSE"
+      ],
+      "failure_code": null,
+      "identifiability": "identified",
+      "paper_id": "GUAN-2026-LPSCLII-PATH-ENTROPY-REPRODUCTION",
+      "promotion_ceiling": "source_scoped_support_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "verified",
+      "claim_id": "GUAN-2026-PATH-ENTROPY-ALONE-UNIVERSAL",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "results/path_entropy_demo_reproduction_v0.1.json",
+        "results/path_entropy_lean_receipt.json",
+        "results/path_entropy_protocol_sensitivity_v0.1.json",
+        "results/path_entropy_sampling_coverage_v0.1.json",
+        "https://doi.org/10.1038/s41467-026-71316-z"
+      ],
+      "failure_code": null,
+      "identifiability": "non_identifiable",
+      "paper_id": "GUAN-2026-PATH-ENTROPY-ALONE-UNIVERSAL",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "DENG-2022-NASICON-INITIAL-RATE-REPRODUCTION",
+      "confidence": 1.0,
+      "decision": "supported",
+      "evidence_ids": [
+        "results/nasicon_initial_rate_reproduction_v0.1.json",
+        "https://doi.org/10.1038/s41467-022-32190-7",
+        "https://github.com/caneparesearch/NASICON_KMC_paper_data"
+      ],
+      "failure_code": null,
+      "identifiability": "identified",
+      "paper_id": "DENG-2022-NASICON-INITIAL-RATE-REPRODUCTION",
+      "promotion_ceiling": "source_scoped_support_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "verified",
+      "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-INITIAL-RATE",
+      "confidence": 1.0,
+      "decision": "falsified",
+      "evidence_ids": [
+        "results/nasicon_initial_rate_reproduction_v0.1.json",
+        "results/nasicon_heldout_composition_scan_v0.1.json",
+        "results/nasicon_barrier_lean_receipt.json",
+        "https://doi.org/10.1038/s41467-022-32190-7",
+        "https://github.com/caneparesearch/NASICON_KMC_paper_data"
+      ],
+      "failure_code": null,
+      "identifiability": "non_identifiable",
+      "paper_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-INITIAL-RATE",
+      "promotion_ceiling": "bounded_falsification_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "not_applicable",
+      "claim_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-CONDUCTIVITY",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "results/nasicon_heldout_composition_scan_v0.1.json",
+        "results/nasicon_short_kmc_pilot_v0.1.json",
+        "https://doi.org/10.1038/s41467-022-32190-7"
+      ],
+      "failure_code": null,
+      "identifiability": "underdetermined",
+      "paper_id": "DENG-2022-MEAN-BARRIER-ALONE-IDENTIFIES-CONDUCTIVITY",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    },
+    {
+      "arm": "ARC_without_promotion_ceiling",
+      "certificate_status": "verified",
+      "claim_id": "JI-2023-LINEAR-EIS-ELECTRODE-ALLOCATION",
+      "confidence": 1.0,
+      "decision": "inconclusive",
+      "evidence_ids": [
+        "results/nleis_public_data_audit_v0.1.json",
+        "results/impedance_parity_lean_receipt.json",
+        "https://doi.org/10.1149/1945-7111/ad15ca",
+        "https://doi.org/10.5281/zenodo.10126580"
+      ],
+      "failure_code": null,
+      "identifiability": "non_identifiable",
+      "paper_id": "JI-2023-LINEAR-EIS-ELECTRODE-ALLOCATION",
+      "promotion_ceiling": "compatibility_only",
+      "seed": 0
+    }
+  ],
+  "schema_version": "arc-promotion-ceiling-ablation-0.1",
+  "scope_warning": "Deterministic component-isolation diagnostic. It does not estimate external causal importance, and its source full arm may itself be an archived co-designed reference.",
+  "source_full_arm": "D_full_reference"
+}

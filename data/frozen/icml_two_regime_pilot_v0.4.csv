@@ -1,0 +1,17 @@
+family,method,source_status,seed_overclaim_rate,seed_identifiability_exact_match,seed_decision_exact_match,seed_joint_exact_match,public_overclaim_rate,public_identifiability_exact_match,public_decision_exact_match,public_joint_exact_match
+Simple controls,Majority prior,fresh deterministic,0.6428571428571429,0.35714285714285715,0.6428571428571429,0.0,0.25,0.5,0.5,0.375
+Simple controls,Evidence present $\Rightarrow$ support,fresh deterministic,1.0,0.35714285714285715,0.14285714285714285,0.0,0.625,0.375,0.375,0.375
+Simple controls,Oracle decision + naive ID,non-deployable diagnostic,0.42857142857142855,0.35714285714285715,1.0,0.14285714285714285,0.125,0.375,1.0,0.375
+Local language models,"Qwen3.5-4B, claim only",fresh local runs,0.14285714285714285,0.5714285714285714,0.7142857142857143,0.35714285714285715,0.125,0.375,0.625,0.125
+Local language models,"Qwen3.5-4B, structured context",fresh local runs,0.07142857142857142,0.6428571428571429,0.7142857142857143,0.2857142857142857,0.0,0.875,0.75,0.375
+Local language models,"Qwen3-8B, claim only",fresh local runs,0.14285714285714285,0.5714285714285714,0.6428571428571429,0.07142857142857142,0.375,0.5,0.5,0.0
+Local language models,"Qwen3-8B, structured context",fresh local runs,0.21428571428571427,0.5714285714285714,0.5714285714285714,0.0,0.375,0.75,0.75,0.25
+Evidence-grounded artifact models,"Qwen3.5-4B, sanitized artifacts",fresh public-case artifact run; seed evidence unavailable,,,,,0.0,0.875,0.875,0.375
+Evidence-grounded artifact models,"Qwen3-8B, sanitized artifacts",fresh public-case artifact run; seed evidence unavailable,,,,,0.5,0.875,1.0,0.5
+Source-grounded retrieval models,"Qwen3.5-4B, micro-RAG",fresh BM25 retrieval over paper abstracts and licensed READMEs,,,,,0.0,0.125,0.625,0.0
+Source-grounded retrieval models,"Qwen3-8B, micro-RAG",fresh BM25 retrieval over paper abstracts and licensed READMEs,,,,,0.375,0.375,0.5,0.0
+ARC variants,ARC w/o explicit assumptions,seed archived; public freshly replayed,0.0,0.42857142857142855,0.8571428571428571,0.42857142857142855,0.0,0.5,0.875,0.5
+ARC variants,ARC w/o countermodels,seed archived; public freshly replayed,0.0,0.6428571428571429,1.0,0.6428571428571429,0.0,0.5,1.0,0.5
+ARC variants,ARC-CM (no Lean),seed archived; public freshly replayed,0.0,1.0,0.8571428571428571,0.8571428571428571,0.0,1.0,1.0,1.0
+ARC variants,ARC w/o promotion ceiling,decision-only ceiling ablation,0.42857142857142855,1.0,1.0,0.5714285714285714,0.125,1.0,1.0,0.875
+ARC variants,ARC-Full reference,seed archived; public freshly replayed,0.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0

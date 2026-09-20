@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Research-page layout reproduction</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    :root{--fg:#333;--sub:#5a5a5a;--muted:#858585;--line:#e0e0e0;--accent:#5865f2;--warm:#c45245;--max:1720px;--text:960px}
+    body{font:18px/1.58 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--fg);background:#fff}
+    nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+    .nav-inner{max-width:var(--max);height:52px;margin:auto;padding:0 32px;display:flex;align-items:center;overflow:hidden}
+    .brand{font-size:15px;font-weight:700;margin-right:28px;white-space:nowrap}.links{display:flex;overflow:auto;scrollbar-width:none}
+    nav a{height:52px;padding:0 14px;display:flex;align-items:center;color:var(--sub);text-decoration:none;white-space:nowrap;font-size:14px}
+    .hero{max-width:var(--max);margin:auto;padding:56px 32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    h1{font-size:38px;line-height:1.28;letter-spacing:-.35px;font-weight:600;color:#2a2a2a}.accent{color:var(--accent);font-weight:700}
+    .authors{margin-top:16px;padding-bottom:22px;border-bottom:1px solid var(--line);color:var(--sub)}
+    .tagline{margin-top:24px;font-size:22px;line-height:1.28;font-weight:700}.lead{margin-top:14px;text-align:justify}
+    .kicker{margin-top:20px;font-size:13px;font-weight:700;letter-spacing:.8px;color:var(--muted)}
+    .findings{list-style:none;display:grid;gap:12px;margin-top:6px}.findings li{display:flex;gap:10px;font-size:16px}.icon{font-size:24px;width:28px}
+    .hero-art{aspect-ratio:1;background:#050505;border-radius:4px;padding:3px;display:grid;grid-template-columns:1fr 2.5fr 1fr;grid-template-rows:1fr 2.5fr 1fr;gap:3px}
+    .tile{background:linear-gradient(145deg,#281b18,#dd7c66 55%,#1b5961);position:relative;overflow:hidden}.tile:nth-child(even){background:linear-gradient(145deg,#071316,#5f66d4,#c69d25)}
+    .tile::after{content:"";position:absolute;width:55%;height:55%;border:3px dotted rgba(255,255,255,.38);border-radius:50%;left:22%;top:20%}
+    section{scroll-margin-top:72px}.prose{max-width:var(--text);padding:0 32px 48px;margin:auto}.prose h2,.wide h2{text-align:center;font-size:30px;margin-bottom:14px}.prose p{text-align:justify}
+    .wide{max-width:var(--max);padding:64px 32px;margin:auto;border-top:1px solid var(--line)}.section-copy{max-width:var(--text);margin:0 auto 28px}
+    .hero-card,.card{background:#fafafa;border:2px solid #000;border-radius:8px;box-shadow:5px 5px #000;padding:20px}.hero-card{max-width:860px;margin:0 auto 22px}
+    .triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.frame{aspect-ratio:1;background:#111;position:relative}.frame::before{content:"";position:absolute;inset:16%;background:radial-gradient(circle at 35% 35%,#65aeb2 0 5%,transparent 6%),radial-gradient(circle at 63% 67%,#c68b80 0 7%,transparent 8%);filter:drop-shadow(18px 7px 0 #736da0)}
+    .labels{display:grid;grid-template-columns:repeat(3,1fr);font-size:11px;font-weight:700;letter-spacing:.5px;text-align:center;margin-top:7px}.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:14px}.chip{font-size:11px;border:1px solid #b9b9e8;color:var(--accent);background:#f0f1ff;border-radius:10px;padding:2px 8px}
+    .carousel{display:flex;gap:16px;overflow:auto;scroll-snap-type:x mandatory;padding:4px 6px 18px}.card{width:calc((100% - 32px)/3);flex:none;scroll-snap-align:start}.card h3{font-size:16px;margin-bottom:12px}
+    .chart{height:180px;display:flex;align-items:end;gap:11px;border-left:2px solid #333;border-bottom:2px solid #333;padding:14px}.bar{width:18%;background:var(--accent)}.bar:nth-child(even){background:var(--warm)}
+    footer{max-width:var(--text);margin:auto;padding:32px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.card{width:calc(50% - 8px)}}
+    @media(max-width:600px){body{font-size:17px}.hero{padding:34px 20px}.hero h1{font-size:28px}.card{width:85%}.wide,.prose{padding-left:20px;padding-right:20px}}
+  </style>
+</head>
+<body>
+<nav><div class="nav-inner"><strong class="brand">Layout Study</strong><div class="links"><a href="#task">Task</a><a href="#comparison">Comparison</a><a href="#evidence">Evidence</a><a href="#metrics">Metrics</a><a href="#artifacts">Artifacts</a></div></div></nav>
+<main>
+  <header class="hero">
+    <div><h1><span class="accent">ResearchPage:</span> A visual system for explaining an interactive scientific benchmark</h1><div class="authors"><span class="accent">Anonymous authors</span><br><small>Design-reproduction audit</small></div><div class="tagline">Can a long technical argument become an inspectable sequence of evidence?</div><p class="lead">This copyright-clean study reproduces the reference site's layout logic using generated shapes and placeholder research prose.</p><div class="kicker">CONTRIBUTIONS</div><ul class="findings"><li><span class="icon">⌗</span><span><b>Structure:</b> sticky argument map, wide hero, narrow prose, and wide evidence.</span></li><li><span class="icon">▣</span><span><b>Interaction:</b> local controls, horizontal evidence cards, and metric chips.</span></li><li><span class="icon">◎</span><span><b>Sequence:</b> task → contrast → cases → metrics → inspectable artifacts.</span></li></ul></div>
+    <div class="hero-art" aria-label="Generated abstract scientific visual"><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div></div>
+  </header>
+  <section class="prose" id="task"><h2>The Task</h2><p>Introduce one scientific question in a constrained reading width before asking the reader to interact with evidence.</p></section>
+  <section class="prose" id="comparison"><h2>The Comparison</h2><p>Define the competing methods, input regimes, and measurable differences before showing selected wins.</p></section>
+  <section class="wide" id="evidence"><div class="section-copy"><h2>Experimental Highlights</h2><p>Lead with one large, annotated comparison; place further examples in a horizontal snap carousel.</p></div><article class="hero-card"><div class="triptych"><div class="frame"></div><div class="frame"></div><div class="frame"></div></div><div class="labels"><span>REFERENCE</span><span>METHOD A</span><span>METHOD B</span></div><div class="chips"><span class="chip">physical consistency</span><span class="chip">calibration</span><span class="chip">long horizon</span></div></article><div class="carousel"><article class="card"><h3>Example 2</h3><div class="triptych"><div class="frame"></div><div class="frame"></div><div class="frame"></div></div></article><article class="card"><h3>Example 3</h3><div class="triptych"><div class="frame"></div><div class="frame"></div><div class="frame"></div></div></article><article class="card"><h3>Example 4</h3><div class="triptych"><div class="frame"></div><div class="frame"></div><div class="frame"></div></div></article><article class="card"><h3>Example 5</h3><div class="triptych"><div class="frame"></div><div class="frame"></div><div class="frame"></div></div></article></div></section>
+  <section class="wide" id="metrics"><div class="section-copy"><h2>Quantitative Results</h2><p>Aggregate evidence comes after the reader understands the task and representative failures.</p></div><div class="hero-card"><div class="chart"><i class="bar" style="height:62%"></i><i class="bar" style="height:78%"></i><i class="bar" style="height:48%"></i><i class="bar" style="height:88%"></i><i class="bar" style="height:70%"></i></div></div></section>
+  <section class="prose" id="artifacts"><h2>Inspectable Artifacts</h2><p>End with data, code, or a small executable object that lets the reader inspect the claim boundary.</p></section>
+</main><footer>Reference-style reproduction for internal visual audit. Generated content only.</footer>
+</body></html>

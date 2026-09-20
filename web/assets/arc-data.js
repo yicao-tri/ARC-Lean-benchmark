@@ -1,0 +1,282 @@
+window.ARC_DATA = {
+  "cases": [
+    {
+      "ceiling": "proposal_only",
+      "claim": "Poisson electrostatics alone determines ionic current and dendrite perturbation growth.",
+      "closure": "specify transport PDE, interface kinetics, geometry, and boundary conditions",
+      "decision": "inconclusive",
+      "evidence_summary": "Observed: electric_potential, charge_density. Still required: ion_transport_law, boundary_conditions, interfacial_kinetics.",
+      "formal": "not_applicable",
+      "id": "H1-POISSON-TRANSPORT-CLOSURE",
+      "identifiability": "underdetermined",
+      "mechanisms": [
+        "mass transport",
+        "interfacial kinetics"
+      ],
+      "scope": "space-charge dendrite mechanism",
+      "title": "Poisson electrostatics alone closes ion transport"
+    },
+    {
+      "ceiling": "compatibility_only",
+      "claim": "Processing modulates the spatial distribution of charge-compensating defects, and that distribution causally drives the persistent subdiffusive transport observed in physical beta- and beta-double-prime-aluminas.",
+      "closure": "prepare composition-matched beta-alumina specimens under processing schedules predicted to produce ordered versus quenched/disordered defect distributions; blind characterization to processing arm",
+      "decision": "inconclusive",
+      "evidence_summary": "The public sample validates subdiffusion and the paper contains in-model interventions, but the public evidence package does not directly measure specimen-level defect maps paired with processing interventions.",
+      "formal": "kernel_checked",
+      "id": "POLETAYEV-2022-PROCESSING-DEFECT-CAUSE",
+      "identifiability": "non_identifiable",
+      "mechanisms": [
+        "processing changes the defect distribution, which changes trapping and crowding",
+        "ion-ion correlations or another heterogeneous landscape yields the same MSD exponent without the proposed defect-distribution mediation"
+      ],
+      "scope": "external causal transport from the paper's simulated defect configurations to physical specimens, not merely causal effects internal to the declared LAMMPS model",
+      "title": "Processing-controlled defect distributions cause persistent subdiffusion in physical beta-aluminas"
+    },
+    {
+      "ceiling": "compatibility_only",
+      "claim": "Path entropy alone is sufficient to uniquely assess or predict ionic conductivity across diverse inorganic ionic conductors.",
+      "closure": "preregister a held-out panel containing pairs matched on path entropy but deliberately separated on escape entropy or network connectivity, all evaluated at matched temperature",
+      "decision": "inconclusive",
+      "evidence_summary": "The source paper itself supplements path entropy with escape entropy and LCS connectivity; no frozen external cross-family calibration is present. On the public LPSCl-II demo, lag-time changes from 300 to 1200 steps move total path entropy by less than 1%, but truncating 1.2 ns to 0.6 or 0.3 ns reduces it by 12.8% or 31.4%.",
+      "formal": "kernel_checked",
+      "id": "GUAN-2026-PATH-ENTROPY-ALONE-UNIVERSAL",
+      "identifiability": "non_identifiable",
+      "mechanisms": [
+        "path multiplicity captured by path entropy is sufficient for cross-material performance ranking",
+        "similar path entropy coexists with different long-range connectivity, escape entropy, carrier density, or collective correlation and therefore different conductivity"
+      ],
+      "scope": "a deliberately strict operational interpretation of the paper's statements that path entropy is a quantitatively robust and universal metric; it does not attribute an exact deterministic law to the authors",
+      "title": "Strict single-descriptor interpretation of path entropy across materials"
+    }
+  ],
+  "label_status": "system_deep_case_not_expert_gold",
+  "retrieval": {
+    "mean_reciprocal_rank": 0.8541666666666666,
+    "n_queries": 8,
+    "source_recall_at_1": 0.75,
+    "source_recall_at_3": 1,
+    "source_recall_at_4": 1
+  },
+  "schema_version": "arc-lean-beyond-pdf-data-0.1",
+  "scope_warning": "Pilot estimates are descriptive; they do not estimate sealed-test generalization.",
+  "source_hashes": {
+    "claim_closure_seed_v0.1.json": "ce429eb746f7dc52a36e081f67066e878b0410957a31ab5caecbc1a6fb0f5fd8",
+    "icml_two_regime_pilot_v0.4.csv": "ee13bf5d8f82aa83a219e0ec9a3fc877f05005f03678f9cdee0514e825ce9617",
+    "path_entropy_lean_receipt.json": "b319b9697a666840e8c39a5e0b81110d933832db4733dd9af92311e7f5b8e708",
+    "public_deep_case_pilot_v0.1.json": "7ad1494ca4cd540a47e05f06f15a816476168955973674557a8b65e9a9f50e2e",
+    "public_micro_rag_pilot_v0.1.json": "22a971192c99088d02813aaf1d8f38f7a49a3d91bc2d1384c8f2a8c558007f52",
+    "public_promotion_ceiling_ablation_v0.1.json": "81e9257ca2bf8547284b5525fded58087f9d92d89e4ee5d99c76276838062b5c",
+    "seed_promotion_ceiling_ablation_v0.1.json": "fd36993d6e1a81e708f34b6e63709823bbfe42e4f523a5b00812da8d91c10a18",
+    "transport_intervention_lean_receipt.json": "ba21d15fe402391152f594366a0ddeece1a75718b642a780dc3fe5cbb7b84144"
+  },
+  "table": [
+    {
+      "family": "Simple controls",
+      "method": "Majority prior",
+      "public_decision_exact_match": "0.5",
+      "public_identifiability_exact_match": "0.5",
+      "public_joint_exact_match": "0.375",
+      "public_overclaim_rate": "0.25",
+      "seed_decision_exact_match": "0.6428571428571429",
+      "seed_identifiability_exact_match": "0.35714285714285715",
+      "seed_joint_exact_match": "0.0",
+      "seed_overclaim_rate": "0.6428571428571429",
+      "source_status": "fresh deterministic"
+    },
+    {
+      "family": "Simple controls",
+      "method": "Evidence present $\\Rightarrow$ support",
+      "public_decision_exact_match": "0.375",
+      "public_identifiability_exact_match": "0.375",
+      "public_joint_exact_match": "0.375",
+      "public_overclaim_rate": "0.625",
+      "seed_decision_exact_match": "0.14285714285714285",
+      "seed_identifiability_exact_match": "0.35714285714285715",
+      "seed_joint_exact_match": "0.0",
+      "seed_overclaim_rate": "1.0",
+      "source_status": "fresh deterministic"
+    },
+    {
+      "family": "Simple controls",
+      "method": "Oracle decision + naive ID",
+      "public_decision_exact_match": "1.0",
+      "public_identifiability_exact_match": "0.375",
+      "public_joint_exact_match": "0.375",
+      "public_overclaim_rate": "0.125",
+      "seed_decision_exact_match": "1.0",
+      "seed_identifiability_exact_match": "0.35714285714285715",
+      "seed_joint_exact_match": "0.14285714285714285",
+      "seed_overclaim_rate": "0.42857142857142855",
+      "source_status": "non-deployable diagnostic"
+    },
+    {
+      "family": "Local language models",
+      "method": "Qwen3.5-4B, claim only",
+      "public_decision_exact_match": "0.625",
+      "public_identifiability_exact_match": "0.375",
+      "public_joint_exact_match": "0.125",
+      "public_overclaim_rate": "0.125",
+      "seed_decision_exact_match": "0.7142857142857143",
+      "seed_identifiability_exact_match": "0.5714285714285714",
+      "seed_joint_exact_match": "0.35714285714285715",
+      "seed_overclaim_rate": "0.14285714285714285",
+      "source_status": "fresh local runs"
+    },
+    {
+      "family": "Local language models",
+      "method": "Qwen3.5-4B, structured context",
+      "public_decision_exact_match": "0.75",
+      "public_identifiability_exact_match": "0.875",
+      "public_joint_exact_match": "0.375",
+      "public_overclaim_rate": "0.0",
+      "seed_decision_exact_match": "0.7142857142857143",
+      "seed_identifiability_exact_match": "0.6428571428571429",
+      "seed_joint_exact_match": "0.2857142857142857",
+      "seed_overclaim_rate": "0.07142857142857142",
+      "source_status": "fresh local runs"
+    },
+    {
+      "family": "Local language models",
+      "method": "Qwen3-8B, claim only",
+      "public_decision_exact_match": "0.5",
+      "public_identifiability_exact_match": "0.5",
+      "public_joint_exact_match": "0.0",
+      "public_overclaim_rate": "0.375",
+      "seed_decision_exact_match": "0.6428571428571429",
+      "seed_identifiability_exact_match": "0.5714285714285714",
+      "seed_joint_exact_match": "0.07142857142857142",
+      "seed_overclaim_rate": "0.14285714285714285",
+      "source_status": "fresh local runs"
+    },
+    {
+      "family": "Local language models",
+      "method": "Qwen3-8B, structured context",
+      "public_decision_exact_match": "0.75",
+      "public_identifiability_exact_match": "0.75",
+      "public_joint_exact_match": "0.25",
+      "public_overclaim_rate": "0.375",
+      "seed_decision_exact_match": "0.5714285714285714",
+      "seed_identifiability_exact_match": "0.5714285714285714",
+      "seed_joint_exact_match": "0.0",
+      "seed_overclaim_rate": "0.21428571428571427",
+      "source_status": "fresh local runs"
+    },
+    {
+      "family": "Evidence-grounded artifact models",
+      "method": "Qwen3.5-4B, sanitized artifacts",
+      "public_decision_exact_match": "0.875",
+      "public_identifiability_exact_match": "0.875",
+      "public_joint_exact_match": "0.375",
+      "public_overclaim_rate": "0.0",
+      "seed_decision_exact_match": "",
+      "seed_identifiability_exact_match": "",
+      "seed_joint_exact_match": "",
+      "seed_overclaim_rate": "",
+      "source_status": "fresh public-case artifact run; seed evidence unavailable"
+    },
+    {
+      "family": "Evidence-grounded artifact models",
+      "method": "Qwen3-8B, sanitized artifacts",
+      "public_decision_exact_match": "1.0",
+      "public_identifiability_exact_match": "0.875",
+      "public_joint_exact_match": "0.5",
+      "public_overclaim_rate": "0.5",
+      "seed_decision_exact_match": "",
+      "seed_identifiability_exact_match": "",
+      "seed_joint_exact_match": "",
+      "seed_overclaim_rate": "",
+      "source_status": "fresh public-case artifact run; seed evidence unavailable"
+    },
+    {
+      "family": "Source-grounded retrieval models",
+      "method": "Qwen3.5-4B, micro-RAG",
+      "public_decision_exact_match": "0.625",
+      "public_identifiability_exact_match": "0.125",
+      "public_joint_exact_match": "0.0",
+      "public_overclaim_rate": "0.0",
+      "seed_decision_exact_match": "",
+      "seed_identifiability_exact_match": "",
+      "seed_joint_exact_match": "",
+      "seed_overclaim_rate": "",
+      "source_status": "fresh BM25 retrieval over paper abstracts and licensed READMEs"
+    },
+    {
+      "family": "Source-grounded retrieval models",
+      "method": "Qwen3-8B, micro-RAG",
+      "public_decision_exact_match": "0.5",
+      "public_identifiability_exact_match": "0.375",
+      "public_joint_exact_match": "0.0",
+      "public_overclaim_rate": "0.375",
+      "seed_decision_exact_match": "",
+      "seed_identifiability_exact_match": "",
+      "seed_joint_exact_match": "",
+      "seed_overclaim_rate": "",
+      "source_status": "fresh BM25 retrieval over paper abstracts and licensed READMEs"
+    },
+    {
+      "family": "ARC variants",
+      "method": "ARC w/o explicit assumptions",
+      "public_decision_exact_match": "0.875",
+      "public_identifiability_exact_match": "0.5",
+      "public_joint_exact_match": "0.5",
+      "public_overclaim_rate": "0.0",
+      "seed_decision_exact_match": "0.8571428571428571",
+      "seed_identifiability_exact_match": "0.42857142857142855",
+      "seed_joint_exact_match": "0.42857142857142855",
+      "seed_overclaim_rate": "0.0",
+      "source_status": "seed archived; public freshly replayed"
+    },
+    {
+      "family": "ARC variants",
+      "method": "ARC w/o countermodels",
+      "public_decision_exact_match": "1.0",
+      "public_identifiability_exact_match": "0.5",
+      "public_joint_exact_match": "0.5",
+      "public_overclaim_rate": "0.0",
+      "seed_decision_exact_match": "1.0",
+      "seed_identifiability_exact_match": "0.6428571428571429",
+      "seed_joint_exact_match": "0.6428571428571429",
+      "seed_overclaim_rate": "0.0",
+      "source_status": "seed archived; public freshly replayed"
+    },
+    {
+      "family": "ARC variants",
+      "method": "ARC-CM (no Lean)",
+      "public_decision_exact_match": "1.0",
+      "public_identifiability_exact_match": "1.0",
+      "public_joint_exact_match": "1.0",
+      "public_overclaim_rate": "0.0",
+      "seed_decision_exact_match": "0.8571428571428571",
+      "seed_identifiability_exact_match": "1.0",
+      "seed_joint_exact_match": "0.8571428571428571",
+      "seed_overclaim_rate": "0.0",
+      "source_status": "seed archived; public freshly replayed"
+    },
+    {
+      "family": "ARC variants",
+      "method": "ARC w/o promotion ceiling",
+      "public_decision_exact_match": "1.0",
+      "public_identifiability_exact_match": "1.0",
+      "public_joint_exact_match": "0.875",
+      "public_overclaim_rate": "0.125",
+      "seed_decision_exact_match": "1.0",
+      "seed_identifiability_exact_match": "1.0",
+      "seed_joint_exact_match": "0.5714285714285714",
+      "seed_overclaim_rate": "0.42857142857142855",
+      "source_status": "decision-only ceiling ablation"
+    },
+    {
+      "family": "ARC variants",
+      "method": "ARC-Full reference",
+      "public_decision_exact_match": "1.0",
+      "public_identifiability_exact_match": "1.0",
+      "public_joint_exact_match": "1.0",
+      "public_overclaim_rate": "0.0",
+      "seed_decision_exact_match": "1.0",
+      "seed_identifiability_exact_match": "1.0",
+      "seed_joint_exact_match": "1.0",
+      "seed_overclaim_rate": "0.0",
+      "source_status": "seed archived; public freshly replayed"
+    }
+  ]
+};
