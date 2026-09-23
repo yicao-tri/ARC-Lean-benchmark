@@ -1,7 +1,13 @@
 # ARC-Lean benchmark and TMLR Beyond-PDF package
 
-This repository is the maintained public-facing package for the ARC-Lean
-method/benchmark paper. It contains two views of the same claim-bounded
+> **Historical pilot — superseded.** This repository preserves the first-round
+> ARC-Lean Beyond-PDF diagnostic package at commit `4e8c454`. It is not a second
+> active TMLR submission and is not the source of truth for the current
+> ARC-CM/TMLR manuscript. It remains available for provenance; no identity-
+> bearing URL from this repository should be linked from an anonymous review
+> submission.
+
+This repository contains two historical views of the same claim-bounded pilot
 evidence:
 
 - `site/`: a self-contained project website deployed by GitHub Pages;
