@@ -1,0 +1,26 @@
+{
+  "schema_version": "arc-leanbench-gold-1",
+  "required_fields": [
+    "item_id",
+    "annotator_id_pseudonym",
+    "blind_to_arm",
+    "gold_error",
+    "severity",
+    "error_families",
+    "localization",
+    "identifiability",
+    "claim_boundary",
+    "semantic_alignment",
+    "repair",
+    "rationale",
+    "completed_at"
+  ],
+  "adjudication_required_fields": ["item_id", "adjudicator_id_pseudonym", "disagreement_fields", "final_label", "rationale", "completed_at"],
+  "minimum_double_coded_fraction": 0.2,
+  "rules": [
+    "Annotators are blind to experimental arm and model output.",
+    "Every primary field is complete before scoring.",
+    "Every disagreement in a primary field is adjudicated and originals are retained.",
+    "Gold annotation is independent of expected Lean status."
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "arc-leanbench-source-lock-1",
+  "lock_date": "2026-10-29",
+  "status": "PENDING_LOCAL_VERIFICATION",
+  "purpose": "Phase 0 candidate-source lock. A record becomes executable only after its local path, content SHA-256, license review, and selection receipt are captured.",
+  "sources": [
+    {
+      "source_id": "minif2f_lean4",
+      "role": "general_logic_positive_control",
+      "upstream": "https://github.com/google-deepmind/miniF2F",
+      "commit": "f0a20e14c1eeccd859d51bb4c2b3ee487889c303",
+      "license": "Apache-2.0",
+      "retrieved_on": "2026-10-29",
+      "local_path": "/Users/yicao/Documents/ARC/resourses/miniF2F",
+      "selection_pool": "MiniF2F/Valid.lean",
+      "selection_pool_git_blob": "97f0ea048e0805434b13b157bedffc99ea7ddb4e",
+      "split": "valid_development_pool",
+      "toolchain": "leanprover/lean4:v4.27.0",
+      "mathlib_revision": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+      "phase1_use": "allowed_pending_local_hash",
+      "required_local_sha256": null
+    },
+    {
+      "source_id": "formalphysics_v2_formalscience",
+      "role": "scientific_formalisation_and_semantic_drift",
+      "upstream": "https://github.com/jmeadows17/formal-science",
+      "commit": "89b1e0ee60a346039107279dd109d00dfe8e8252",
+      "license": "NOT_FOUND_IN_UPSTREAM_REPOSITORY",
+      "retrieved_on": "2026-10-29",
+      "local_path": "/Users/yicao/Documents/ARC/resourses/formal-science",
+      "selection_pool": "src/app_data/formal_qa_data.json",
+      "selection_pool_git_blob": "5593ed28e6f4bec10a66c542187039049a405d01",
+      "split": "deterministic_development_subset_pending_permission",
+      "toolchain": "UPSTREAM_DOCUMENTATION_REFERENCES_FSLean; exact checked-in FSLean environment unavailable",
+      "mathlib_revision": null,
+      "phase1_use": "BLOCKED_PENDING_LICENSE_OR_WRITTEN_PERMISSION_AND_BUILDABLE_ENVIRONMENT",
+      "required_local_sha256": null
+    },
+    {
+      "source_id": "scibench_quantitative",
+      "role": "quantitative_science_audit",
+      "upstream": "https://github.com/mandyyyyii/scibench",
+      "commit": "e14e0ca3d3db0f02928a18d435b9c3d15656a7c5",
+      "license": "MIT",
+      "retrieved_on": "2026-10-29",
+      "local_path": "/Users/yicao/Documents/ARC/resourses/scibench",
+      "selection_pool": [
+        "dataset/original/atkins.json",
+        "dataset/original/fund.json",
+        "dataset/original/thermo.json"
+      ],
+      "selection_pool_git_blobs": {
+        "dataset/original/atkins.json": "af7cb1de16bc2d2844c003777aabcf1cbeb9227a",
+        "dataset/original/fund.json": "8add3fc9dff02b465c80626fee77ea894f8a41af",
+        "dataset/original/thermo.json": "3c54af8f00e5986998f04a9f68292dad9a3bd5e4"
+      },
+      "split": "deterministic_development_subset_10_per_subject",
+      "toolchain": "python_numeric_adapter_only",
+      "mathlib_revision": null,
+      "phase1_use": "allowed_pending_local_hash",
+      "required_local_sha256": null
+    },
+    {
+      "source_id": "arc_controlled_claims",
+      "role": "ARC_identifiability_and_claim_boundary",
+      "upstream": "https://github.com/yicao-tri/ARC-CM-TMLR",
+      "commit": "d13a0608fe12883b94c0219fbe0b2c5e288270f2",
+      "license": "project_owned_private_artifact",
+      "retrieved_on": "2026-10-29",
+      "local_path": "/Users/yicao/Documents/ARC/ARC-CM-TMLR",
+      "selection_pool": "data/raw/polymer_countermodel_stress_v0.1.json",
+      "selection_pool_git_blob": "ea6106732d8c0b96d1a46077b00d856e610a7802",
+      "split": "development_only; parent-cluster disjoint from later sealed ARC pool",
+      "toolchain": "source_specific ARC verifier environment",
+      "mathlib_revision": null,
+      "phase1_use": "allowed_pending_local_hash_and_cluster_firewall",
+      "required_local_sha256": null
+    },
+    {
+      "source_id": "physlib_v2",
+      "role": "formal_library_dependency_not_an_item_source",
+      "upstream": "https://github.com/ShirleyLIYuxin/Lean4PHYS",
+      "commit": "cae90192085dda428a47af46766f7c738d9624f2",
+      "license": "Apache-2.0 for PhysLib_v2",
+      "retrieved_on": "2026-10-29",
+      "local_path": "/Users/yicao/Documents/ARC/resourses/physlib",
+      "selection_pool": null,
+      "split": "not_applicable",
+      "toolchain": "leanprover/lean4:v4.28.0",
+      "mathlib_revision": "v4.28.0",
+      "phase1_use": "allowed_as_dependency_pending_fresh_build_receipt",
+      "required_local_sha256": null
+    },
+    {
+      "source_id": "leanphysbench_v0",
+      "role": "candidate_future_benchmark_not_in_phase1",
+      "upstream": "https://github.com/ShirleyLIYuxin/Lean4PHYS",
+      "commit": "cae90192085dda428a47af46766f7c738d9624f2",
+      "license": "CC-BY-NC-4.0 plus restrictions on commercial AI evaluation",
+      "retrieved_on": "2026-10-29",
+      "local_path": "/Users/yicao/Documents/ARC/resourses/Lean4PHYS/LeanPhysBench",
+      "selection_pool": "LeanPhysBench/LeanPhysBench_v0.json",
+      "selection_pool_git_blob": "16e7b579144cb83006ee6e0efac2c04f4993210a",
+      "split": "not_selected",
+      "toolchain": "leanprover/lean4:v4.28.0",
+      "mathlib_revision": "v4.28.0",
+      "phase1_use": "EXCLUDED_UNTIL_LICENSE_COMPATIBILITY_FOR_MODEL_AND_ORGANISATIONAL_USE_IS_CONFIRMED",
+      "required_local_sha256": null
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "arc-leanbench-model-lock-1",
+  "status": "PENDING_LOCAL_CAPTURE",
+  "requested_model": "qwen3.5:4b",
+  "serving_stack": "local_ollama_or_equivalent_immutable_local_endpoint",
+  "model_digest": null,
+  "model_file_sha256": null,
+  "runtime_version": null,
+  "captured_at": null,
+  "sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_output_tokens": 1200,
+    "seed_schedule": [1729, 2718, 3141]
+  },
+  "change_policy": "Any change in serving model, digest, runtime, sampling, tool budget, or prompt creates a new protocol version before a run."
+}
