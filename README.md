@@ -39,6 +39,12 @@ python compile_submission.py
 The official preview URL is
 `http://0.0.0.0:8080/tmlr-beyond-pdf/under_review/submission/`.
 
+## ARC-LeanBench scientific-audit protocol
+
+`docs/arc_leanbench/BLUEPRINT_v1.md` records the roadmap for the next research line: measuring when Lean improves the auditing of scientific claims and when formal validity is insufficient because semantic fidelity or empirical evidence is missing. The executable Phase 0/Phase 1 harness is under `scientific_pilot/`.
+
+Its current status is **protocol/harness only — not run and not passed**. The 120-unit, four-stratum Phase 1 study becomes a valid result only after its source licenses, source-specific Lean environments, deterministic manifest, blind gold annotation, A0–A6 raw runs, and independent review gate are complete. In particular, Phase 1 is a development pilot, not a sealed evaluation. See `docs/arc_leanbench/REVIEW_GATE.md` for the exact evidence required before describing either phase as complete. FormalPhysics has an additional hash-bound source gate in `docs/arc_leanbench/FORMALPHYSICS_SOURCE_GATE_V1.md`; confidential permissions and controlled-source identity remain outside the public repository.
+
 ## Repository map
 
 - `data/frozen/`: compact immutable pilot artifacts copied from the research

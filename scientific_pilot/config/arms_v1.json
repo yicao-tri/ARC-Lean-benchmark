@@ -1,0 +1,31 @@
+{
+  "schema_version": "arc-leanbench-arms-1",
+  "comparison_mode": "fixed_budget",
+  "shared_contract": {
+    "base_model": "PENDING_LOCAL_MODEL_DIGEST",
+    "system_prompt": "prompts/system_v1.md",
+    "output_schema": "config/output_schema_v1.json",
+    "replicates": 3,
+    "seeds": [1729, 2718, 3141],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_output_tokens": 1200,
+    "max_wallclock_seconds": 300,
+    "max_tool_calls": 4,
+    "evidence_visibility": "unit_evidence_allowlist_only",
+    "prohibited": ["gold labels", "reference proofs", "post-outcome manual repair", "open-web retrieval"]
+  },
+  "arms": [
+    {"id": "A0", "name": "direct_llm", "modules": ["direct"], "allowed_tools": []},
+    {"id": "A1", "name": "structured_audit", "modules": ["structured_claim_assumption_evidence"], "allowed_tools": []},
+    {"id": "A2", "name": "llm_python", "modules": ["structured_claim_assumption_evidence", "python_check"], "allowed_tools": ["python_sandbox"]},
+    {"id": "A3", "name": "llm_lean", "modules": ["direct", "lean_formal_check"], "allowed_tools": ["lean_source_environment"]},
+    {"id": "A4", "name": "llm_countermodel", "modules": ["countermodel_search"], "allowed_tools": ["countermodel_search"]},
+    {"id": "A5", "name": "arc_cm_no_lean", "modules": ["structured_claim_assumption_evidence", "evidence_audit", "domain_audit", "numerical_check", "countermodel_search", "semantic_alignment_record"], "allowed_tools": ["python_sandbox", "countermodel_search"]},
+    {"id": "A6", "name": "arc_cm_plus_lean", "modules": ["structured_claim_assumption_evidence", "evidence_audit", "domain_audit", "numerical_check", "countermodel_search", "semantic_alignment_record", "lean_formal_check"], "allowed_tools": ["python_sandbox", "countermodel_search", "lean_source_environment"]}
+  ],
+  "primary_contrasts": [
+    {"name": "lean_given_arc", "treated": "A6", "control": "A5"},
+    {"name": "lean_given_direct_llm", "treated": "A3", "control": "A0"}
+  ]
+}

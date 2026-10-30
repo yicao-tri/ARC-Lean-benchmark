@@ -1,0 +1,18 @@
+{
+  "schema_version": "arc-leanbench-execution-receipt-1",
+  "required_fields": [
+    "status",
+    "runner_commit",
+    "phase0_freeze_sha256",
+    "manifest_sha256",
+    "raw_runs_sha256",
+    "arms_sha256",
+    "started_at",
+    "finished_at",
+    "scheduled_run_count",
+    "observed_run_count",
+    "failure_count"
+  ],
+  "status": "EXECUTED",
+  "rule": "The score/figure scripts reject results unless the receipt binds a PASS Phase 0 freeze, frozen manifest, arms contract, runner commit, and exact raw JSONL SHA-256."
+}

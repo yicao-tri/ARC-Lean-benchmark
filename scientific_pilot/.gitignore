@@ -1,0 +1,8 @@
+receipts/
+inputs/
+manifests/
+gold/
+raw/
+results/
+figures/
+__pycache__/

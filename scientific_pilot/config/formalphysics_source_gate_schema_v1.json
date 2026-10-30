@@ -1,0 +1,84 @@
+{
+  "schema_version": "arc-leanbench-formalphysics-source-gate-1",
+  "purpose": "Non-confidential, hash-bound schema for clearing the FormalPhysics v2 source gate. Confidential authorization content must remain outside the public repository.",
+  "authorization_inventory_required": [
+    "source_id",
+    "dataset_identifier",
+    "document_sha256",
+    "issued_on",
+    "issuer_role",
+    "custodian",
+    "authorized_evaluator",
+    "permitted_uses",
+    "redistribution_disposition",
+    "attribution_requirements",
+    "conditions_or_expiry"
+  ],
+  "source_identity_required": [
+    "origin_url",
+    "source_commit",
+    "source_tree",
+    "working_tree_clean",
+    "recursive_submodule_status",
+    "dataset_path",
+    "dataset_git_blob",
+    "dataset_sha256",
+    "dataset_bytes",
+    "parsed_item_count"
+  ],
+  "fslean_identity_required": [
+    "artifact_kind",
+    "artifact_id",
+    "origin_or_controlled_artifact_id",
+    "commit_or_archive_sha256",
+    "license_or_permission_reference",
+    "retrieved_at",
+    "custodian"
+  ],
+  "environment_lock_required": [
+    "environment_id",
+    "lean_toolchain",
+    "lakefile_sha256",
+    "lake_manifest_sha256",
+    "lean_version",
+    "lake_version",
+    "elan_version",
+    "mathlib_revision",
+    "dependency_lock_sha256"
+  ],
+  "build_receipt_required": [
+    "worktree_id",
+    "argv",
+    "cwd_fingerprint",
+    "environment_lock_sha256",
+    "returncode",
+    "stdout_sha256",
+    "stderr_sha256",
+    "elapsed_seconds",
+    "platform"
+  ],
+  "corpus_record_required": [
+    "item_id",
+    "source_record_sha256",
+    "formal_answer_sha256",
+    "adapter_sha256",
+    "parse_status",
+    "argv",
+    "cwd_fingerprint",
+    "stdout_sha256",
+    "stderr_sha256",
+    "returncode",
+    "lean_status",
+    "contains_sorry",
+    "contains_unresolved_metavariables",
+    "introduced_axioms"
+  ],
+  "adapter_review_required": [
+    "adapter_sha256",
+    "semantic_neutrality_reviewed",
+    "reviewer",
+    "reviewed_item_count",
+    "alignment_records_reference",
+    "forbidden_changes_absent"
+  ]
+}
