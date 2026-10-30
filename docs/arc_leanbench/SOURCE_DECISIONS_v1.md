@@ -6,9 +6,9 @@ It is intentionally more conservative than a list of attractive benchmarks.
 | Source | Pinned upstream state | What it contributes | Phase 1 decision |
 | --- | --- | --- | --- |
 | Google DeepMind miniF2F | `f0a20e14c1eeccd859d51bb4c2b3ee487889c303`; Apache-2.0; Lean 4.27 | Formal/general-reasoning positive control | Candidate, pending local hash and build receipt |
-| FormalScience / FormalPhysics v2 | `89b1e0ee60a346039107279dd109d00dfe8e8252`; `src/app_data/formal_qa_data.json` | Formal physics and semantic-drift stratum | **Blocked**: no `LICENSE` found in upstream root and the stated FSLean environment is not checked in; obtain written permission/licence and a buildable pinned environment before use |
+| FormalScience / FormalPhysics v2 | `89b1e0ee60a346039107279dd109d00dfe8e8252`; `src/app_data/formal_qa_data.json` | Formal physics and semantic-drift stratum | **Blocked**: no `LICENSE` was found in the upstream root, and no independently verifiable FSLean environment has been captured for the pinned commit; obtain written permission/licence and a separately provenance-locked, buildable environment before use |
 | SciBench | `e14e0ca3d3db0f02928a18d435b9c3d15656a7c5`; MIT | Physics/chemistry quantitative audit tasks | Candidate, pending local hash and candidate authoring |
-| ARC controlled claims | private ARC-CM-TMLR `d13a0608fe12883b94c0219fbe0b2c5e288270f2` | Identifiability and claim-boundary stress cases | Candidate, pending parent-cluster firewall and new blinded gold labels |
+| ARC controlled claims | access-controlled project claim pool; exact identity is retained in a private provenance receipt | Identifiability and claim-boundary stress cases | Candidate, pending parent-cluster firewall, new blinded gold labels, and controlled-source receipt review |
 | PhysLib v2 | Lean4PHYS `cae90192085dda428a47af46766f7c738d9624f2`; Apache-2.0 | Source-specific Lean vocabulary and checking environment | Allowed dependency after fresh clean build receipt |
 | LeanPhysBench v0 | same Lean4PHYS commit; CC BY-NC-4.0 with additional model-evaluation terms | Possible later formal-physics benchmark | Not selected; requires usage compatibility confirmation for the exact model and organisation |
 
@@ -23,6 +23,14 @@ FormalPhysics.  If the blocker remains, the preregistered options are:
    compatibility environment with a recorded toolchain/Mathlib lock; or
 2. issue a protocol amendment before any runs that replaces this stratum with a
    new, explicitly licensed dataset, and names it accurately throughout.
+
+## FormalPhysics source-gate supplement
+
+The user has chosen the first option. This does **not** remove the block by
+assertion: `FORMALPHYSICS_SOURCE_GATE_V1.md` defines the F0 evidence package,
+and `verify_formalphysics_source_gate.py` must issue a machine-readable PASS.
+Permission evidence itself remains in access-controlled provenance; the public
+repository stores only its cryptographic inventory and redistribution decision.
 
 ## Retrieved source facts
 
@@ -40,7 +48,8 @@ FormalPhysics.  If the blocker remains, the preregistered options are:
 
 ## Resource infrastructure action
 
-The user-provided resource root currently has SciBench and Lean4PHYS/PhysLib,
-but not a visible miniF2F or FormalScience clone.  The bootstrap helper pins
-both to the source-lock commits on the local experiment host; it never upgrades
-them to a moving branch.
+Set `ARC_PROJECT_ROOT` and `ARC_RESOURCE_ROOT` on the experiment host before
+running the capture tools. The bootstrap helper pins a missing miniF2F or
+FormalScience clone to the source-lock commits; it never upgrades an existing
+repository to a moving branch. It does not supply the separately governed
+FormalPhysics evaluation environment.

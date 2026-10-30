@@ -98,7 +98,7 @@ current upstream resources are not toolchain-compatible:
 | --- | --- | --- |
 | miniF2F Lean 4 | Lean `v4.27.0`, pinned Mathlib in upstream manifest | capture clean `lake build` receipt |
 | PhysLib v2 / Lean4PHYS | Lean `v4.28.0`, Mathlib `v4.28.0` | capture clean `lake build` receipt |
-| FormalPhysics via FormalScience | upstream dataset is available, but its checked-in repository does not supply the referenced `FSLean` environment | obtain or construct a versioned, licensed compatibility environment and capture it before selection |
+| FormalPhysics v2 via FormalScience | upstream documentation describes an `FSLean` project, but the pinned dataset commit has no independently captured, reproducible environment receipt | obtain author-authorized FSLean or a separately named, versioned compatibility environment; provenance-lock and capture it before selection |
 | SciBench / ARC claims | no canonical Lean project | only formalize claims against a separately pinned target environment; report semantic alignment |
 
 Every Lean-enabled raw result includes command, working-directory fingerprint,
@@ -132,6 +132,13 @@ any outcome was inspected before the change.  Historic outputs are retained;
 they are never overwritten.
 
 ## 10. Completion gate
+
+For FormalPhysics, the F0 source gate additionally requires a rights-holder
+authorization inventory, clean clone/source-tree/data identity, independently
+provenanced FSLean/evaluation environment, two clean builds, a fixed
+30-item corpus check, and an adapter semantic-boundary review. Confidential
+permission material stays off the public repository; its hash, custodian, and
+redistribution decision are recorded in the gate receipt.
 
 Phase 0 passes only after the independent reviewer finds executable evidence
 for source locks, environment receipts, exact 120-unit manifest, partition

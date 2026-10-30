@@ -8,6 +8,7 @@ failed build stays a failure rather than being replaced with a user assertion.
 from __future__ import annotations
 
 import argparse
+import os
 import platform
 import shutil
 import subprocess
@@ -36,10 +37,14 @@ def command(argv: list[str], cwd: Path | None = None) -> dict[str, Any]:
 
 
 def source_receipt(source: dict[str, Any], *, run_build: bool) -> dict[str, Any]:
-    root = Path(source["local_path"])
+    configured_path = str(source["local_path"])
+    resolved_path = os.path.expandvars(configured_path)
+    root = Path(resolved_path)
     receipt: dict[str, Any] = {
         "source_id": source["source_id"],
+        "configured_path": configured_path,
         "path": str(root),
+        "unresolved_path_variables": "${" in resolved_path or "$" in resolved_path,
         "exists": root.exists(),
         "commands": [],
         "files": {},

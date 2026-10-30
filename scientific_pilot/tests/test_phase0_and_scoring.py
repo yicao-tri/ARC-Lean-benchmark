@@ -17,6 +17,7 @@ from validate_arm_contract import validate as validate_arm_contract
 from validate_candidate_pool import validate as validate_candidates
 from validate_phase0 import validate as validate_phase0
 from validate_raw_runs import validate as validate_raw_runs
+from verify_formalphysics_source_gate import verification as verify_formalphysics_source_gate
 
 
 def gold(item_id: str, is_error: bool, *, family: str = "G2_invalid_inference") -> dict:
@@ -184,6 +185,35 @@ class ManifestTests(unittest.TestCase):
     def test_arm_contract_has_matched_lean_deltas(self) -> None:
         arms = json.loads((ROOT / "scientific_pilot" / "config" / "arms_v1.json").read_text())
         result = validate_arm_contract(arms)
+        self.assertTrue(result["passed"], result["errors"])
+
+
+class FormalPhysicsSourceGateTests(unittest.TestCase):
+    def write_json(self, root: Path, name: str, value: dict) -> Path:
+        path = root / name
+        path.write_text(json.dumps(value), encoding="utf-8")
+        return path
+
+    def test_hash_bound_formalphysics_gate(self) -> None:
+        digest = lambda letter: letter * 64
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            lock = self.write_json(root, "lock.json", {"sources": [{"source_id": "formalphysics_v2_formalscience", "commit": "a" * 40, "selection_pool": "src/app_data/formal_qa_data.json", "selection_pool_git_blob": "b" * 40, "phase1_use": "eligible_pending_phase0_freeze_and_independent_review"}]})
+            auth = self.write_json(root, "auth.json", {"source_id": "formalphysics_v2_formalscience", "dataset_identifier": "src/app_data/formal_qa_data.json / FormalPhysics_v2", "document_sha256": digest("c"), "issued_on": "2026-01-01", "issuer_role": "rights holder", "custodian": "controlled", "authorized_evaluator": "research organisation/model provider", "permitted_uses": ["research", "automated_llm_evaluation", "controlled_audit_variants"], "redistribution_disposition": "controlled_access_only", "attribution_requirements": "cite", "conditions_or_expiry": "none"})
+            source = self.write_json(root, "source.json", {"origin_url": "https://example.invalid/formal-science", "source_commit": "a" * 40, "source_tree": "d" * 40, "working_tree_clean": True, "recursive_submodule_status": {"returncode": 0}, "dataset_path": "src/app_data/formal_qa_data.json", "dataset_git_blob": "b" * 40, "dataset_sha256": digest("d"), "dataset_bytes": 123, "parsed_item_count": 215})
+            fslean = self.write_json(root, "fslean.json", {"artifact_kind": "compatibility_environment", "artifact_id": "formalphysics_eval_env_v1", "origin_or_controlled_artifact_id": "controlled://fslean", "commit_or_archive_sha256": "e" * 40, "license_or_permission_reference": "auth-hash", "retrieved_at": "2026-01-01T00:00:00Z", "custodian": "controlled", "working_tree_clean": True})
+            environment = self.write_json(root, "environment.json", {"environment_id": "formalphysics_eval_env_v1", "lean_toolchain": "leanprover/lean4:v4.24.0-rc1", "lakefile_sha256": digest("f"), "lake_manifest_sha256": digest("0"), "lean_version": "Lean 4.24", "lake_version": "Lake", "elan_version": "elan", "mathlib_revision": "1" * 40, "dependency_lock_sha256": digest("0")})
+            environment_sha = __import__("hashlib").sha256(environment.read_bytes()).hexdigest()
+            build_template = {"argv": ["lake", "build"], "environment_lock_sha256": environment_sha, "returncode": 0, "stdout_sha256": digest("2"), "stderr_sha256": digest("3"), "elapsed_seconds": 1.0, "platform": "test"}
+            build_a = self.write_json(root, "build_a.json", {**build_template, "worktree_id": "clean-A", "cwd_fingerprint": digest("4")})
+            build_b = self.write_json(root, "build_b.json", {**build_template, "worktree_id": "clean-B", "cwd_fingerprint": digest("5")})
+            adapter = self.write_json(root, "adapter.json", {"adapter_sha256": digest("6"), "semantic_neutrality_reviewed": True, "reviewer": "reviewer", "reviewed_item_count": 10, "alignment_records_reference": "controlled://alignment", "forbidden_changes_absent": True})
+            items = [{"item_id": f"formalphysics_v2_formalscience::{index}", "source_id": "formalphysics_v2_formalscience"} for index in range(30)]
+            manifest = self.write_json(root, "manifest.json", {"items": items})
+            corpus = root / "corpus.jsonl"
+            rows = [{"item_id": item["item_id"], "source_record_sha256": digest("7"), "formal_answer_sha256": digest("8"), "adapter_sha256": digest("6"), "parse_status": "parsed", "argv": ["lake", "env", "lean"], "cwd_fingerprint": digest("9"), "stdout_sha256": digest("a"), "stderr_sha256": digest("b"), "returncode": 0, "lean_status": "verified", "contains_sorry": False, "contains_unresolved_metavariables": False, "introduced_axioms": []} for item in items]
+            corpus.write_text("\n".join(json.dumps(row) for row in rows) + "\n", encoding="utf-8")
+            result = verify_formalphysics_source_gate(source_lock_path=lock, authorization_path=auth, source_identity_path=source, fslean_identity_path=fslean, environment_lock_path=environment, build_a_path=build_a, build_b_path=build_b, corpus_path=corpus, adapter_path=adapter, manifest_path=manifest)
         self.assertTrue(result["passed"], result["errors"])
 
 

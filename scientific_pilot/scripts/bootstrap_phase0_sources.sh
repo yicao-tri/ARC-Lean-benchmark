@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Create only the missing Phase 0 source clones at the exact locked commits.
-# Usage: bash scientific_pilot/scripts/bootstrap_phase0_sources.sh /Users/yicao/Documents/ARC/resourses
+# Usage: bash scientific_pilot/scripts/bootstrap_phase0_sources.sh "$ARC_RESOURCE_ROOT"
 set -euo pipefail
 
 RESOURCE_ROOT=${1:?"pass the absolute ARC resources directory"}

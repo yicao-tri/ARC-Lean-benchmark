@@ -66,19 +66,29 @@ def validate_model(lock: dict[str, Any], receipt: dict[str, Any]) -> list[str]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=repo_root(Path(__file__)))
+    parser.add_argument("--source-lock", type=Path, help="reviewed candidate source lock; defaults to the draft lock")
     parser.add_argument("--environment-receipt", type=Path, required=True)
     parser.add_argument("--model-receipt", type=Path, required=True)
     parser.add_argument("--manifest", type=Path, required=True)
+    parser.add_argument("--formalphysics-source-gate", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     root = args.root
-    lock_path = root / "scientific_pilot" / "config" / "sources.lock.json"
+    lock_path = args.source_lock or root / "scientific_pilot" / "config" / "sources.lock.json"
     model_lock_path = root / "scientific_pilot" / "config" / "model.lock.json"
-    preflight = validate_phase0(root, strict=True)
+    preflight = validate_phase0(root, strict=True, source_lock_path=lock_path)
     environment = verify(load_json(lock_path), load_json(args.environment_receipt), sha256_file(lock_path))
     manifest_errors = validate_manifest(load_json(args.manifest), sha256_file(lock_path))
     model_errors = validate_model(load_json(model_lock_path), load_json(args.model_receipt))
-    errors = [*preflight["errors"], *environment["errors"], *manifest_errors, *model_errors]
+    formalphysics_gate = load_json(args.formalphysics_source_gate)
+    gate_errors: list[str] = []
+    if formalphysics_gate.get("status") != "PASS":
+        gate_errors.append("FormalPhysics source-gate receipt is not PASS")
+    if formalphysics_gate.get("source_lock_sha256") != sha256_file(lock_path):
+        gate_errors.append("FormalPhysics source-gate receipt is not bound to the candidate source lock")
+    if formalphysics_gate.get("manifest_sha256") != sha256_file(args.manifest):
+        gate_errors.append("FormalPhysics source-gate receipt is not bound to the exact Phase 1 manifest")
+    errors = [*preflight["errors"], *environment["errors"], *manifest_errors, *model_errors, *gate_errors]
     receipt = {
         "schema_version": "arc-leanbench-phase0-freeze-1",
         "created_at": datetime.now(timezone.utc).isoformat(),
@@ -89,6 +99,7 @@ def main() -> None:
         "environment_receipt_sha256": sha256_file(args.environment_receipt),
         "model_receipt_sha256": sha256_file(args.model_receipt),
         "manifest_sha256": sha256_file(args.manifest),
+        "formalphysics_source_gate_sha256": sha256_file(args.formalphysics_source_gate),
         "errors": errors,
         "warnings": preflight["warnings"],
     }

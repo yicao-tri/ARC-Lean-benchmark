@@ -11,7 +11,9 @@ study has been executed.
 
 The harness is ready for local source capture and validation, but its source
 lock explicitly blocks FormalPhysics until an appropriate licence/permission
-and buildable Lean environment are recorded. The remote execution environment
+and independently provenance-locked, buildable Lean environment are recorded.
+`docs/arc_leanbench/FORMALPHYSICS_SOURCE_GATE_V1.md` defines that additional
+gate. The remote execution environment
 also must capture local source hashes, model digest, prompt hashes, and actual
 Lean build receipts before a Phase 0 freeze can pass.
 
@@ -28,12 +30,19 @@ flowchart LR
 
 ## First commands on the experiment host
 
-Run these from the repository root after the local resource paths in
-`config/sources.lock.json` are correct:
+Run these from the repository root after setting portable root variables (do
+not commit a personal absolute path to the public repository):
 
 ```bash
-bash scientific_pilot/scripts/bootstrap_phase0_sources.sh \
-  /Users/yicao/Documents/ARC/resourses
+export ARC_PROJECT_ROOT="/absolute/path/to/your/ARC"
+export ARC_RESOURCE_ROOT="$ARC_PROJECT_ROOT/resourses"
+export ARC_CONTROLLED_CLAIMS_ROOT="/controlled/path/not-published"
+```
+
+Then capture the standard sources:
+
+```bash
+bash scientific_pilot/scripts/bootstrap_phase0_sources.sh "$ARC_RESOURCE_ROOT"
 
 python3 scientific_pilot/scripts/capture_environment.py \
   --source-lock scientific_pilot/config/sources.lock.json \
@@ -51,6 +60,12 @@ python3 scientific_pilot/scripts/validate_phase0.py --strict \
 Both commands are expected to fail until every required resource is locally
 available, legal for the intended use, hash-pinned, and buildable. Do not work
 around a failure by editing the receipt or hand-writing a successful result.
+
+The FormalPhysics stratum has a separate source gate. It requires two clean
+FSLean/evaluation-environment builds and a fixed selected-corpus compile
+receipt before its source-lock status can be promoted; follow
+`docs/arc_leanbench/FORMALPHYSICS_SOURCE_GATE_V1.md`. That gate cannot be
+cleared with the PhysLib build receipt.
 
 After reviewing the capture receipt, create a *new versioned candidate lock*
 with observed local hashes; do not overwrite the draft lock:

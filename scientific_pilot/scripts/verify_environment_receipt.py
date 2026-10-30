@@ -3,10 +3,14 @@
 from __future__ import annotations
 
 import argparse
+import re
 from pathlib import Path
 from typing import Any
 
 from pilot_common import load_json, sha256_file, write_json
+
+
+SHA256 = re.compile(r"^[0-9a-f]{64}$")
 
 
 def git_head(source_receipt: dict[str, Any]) -> str | None:
@@ -37,6 +41,15 @@ def verify(lock: dict[str, Any], receipt: dict[str, Any], lock_sha: str) -> dict
         observed = by_id[source["source_id"]]
         if not observed.get("exists"):
             errors.append(f"source unavailable: {source['source_id']}")
+            continue
+        if source.get("controlled_private_source"):
+            receipt_sha = source.get("controlled_provenance_receipt_sha256")
+            if not isinstance(receipt_sha, str) or not SHA256.fullmatch(receipt_sha):
+                errors.append(f"controlled source lacks a private provenance-receipt SHA-256: {source['source_id']}")
+            if not git_clean(observed):
+                errors.append(f"controlled source working tree not clean or status unavailable: {source['source_id']}")
+            # Exact identity and data-path comparison happens in the controlled
+            # provenance receipt; public locks deliberately do not disclose it.
             continue
         head = git_head(observed)
         if head != source["commit"]:

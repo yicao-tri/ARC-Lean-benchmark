@@ -11,20 +11,21 @@ from pilot_common import load_json, repo_root, sha256_file, write_json
 from validate_arm_contract import validate as validate_arm_contract
 
 
-def validate(root: Path, *, strict: bool) -> dict[str, Any]:
+def validate(root: Path, *, strict: bool, source_lock_path: Path | None = None) -> dict[str, Any]:
     protocol = root / "docs" / "arc_leanbench" / "PHASE0_PROTOCOL_v1.md"
     blueprint = root / "docs" / "arc_leanbench" / "BLUEPRINT_v1.md"
     rubric = root / "docs" / "arc_leanbench" / "GOLD_RUBRIC_v1.md"
     review = root / "docs" / "arc_leanbench" / "REVIEW_GATE.md"
-    lock_path = root / "scientific_pilot" / "config" / "sources.lock.json"
+    lock_path = source_lock_path or root / "scientific_pilot" / "config" / "sources.lock.json"
     arms_path = root / "scientific_pilot" / "config" / "arms_v1.json"
     run_plan_path = root / "scientific_pilot" / "config" / "run_plan_v1.json"
     schema_path = root / "scientific_pilot" / "config" / "output_schema_v1.json"
     model_lock_path = root / "scientific_pilot" / "config" / "model.lock.json"
     gold_schema_path = root / "scientific_pilot" / "config" / "gold_annotation_schema_v1.json"
+    formalphysics_gate_schema_path = root / "scientific_pilot" / "config" / "formalphysics_source_gate_schema_v1.json"
     checklist_path = root / "scientific_pilot" / "config" / "pre_run_checklist_v1.md"
     source_decisions = root / "docs" / "arc_leanbench" / "SOURCE_DECISIONS_v1.md"
-    required = [protocol, blueprint, rubric, review, source_decisions, lock_path, arms_path, run_plan_path, schema_path, model_lock_path, gold_schema_path, checklist_path]
+    required = [protocol, blueprint, rubric, review, source_decisions, lock_path, arms_path, run_plan_path, schema_path, model_lock_path, gold_schema_path, formalphysics_gate_schema_path, checklist_path]
     errors = [f"missing {path.relative_to(root)}" for path in required if not path.exists()]
     if errors:
         return {"passed": False, "errors": errors, "warnings": [], "artifacts": {}}
@@ -35,6 +36,7 @@ def validate(root: Path, *, strict: bool) -> dict[str, Any]:
     schema = load_json(schema_path)
     model_lock = load_json(model_lock_path)
     gold_schema = load_json(gold_schema_path)
+    formalphysics_gate_schema = load_json(formalphysics_gate_schema_path)
     warnings: list[str] = []
     source_ids = {source["source_id"] for source in lock.get("sources", [])}
     required_sources = set(plan.get("strata", {}))
@@ -52,6 +54,8 @@ def validate(root: Path, *, strict: bool) -> dict[str, Any]:
         (errors if strict else warnings).append(message)
     if gold_schema.get("minimum_double_coded_fraction", 0) < 0.2:
         errors.append("gold schema must require at least 20% blind double coding")
+    if "authorization_inventory_required" not in formalphysics_gate_schema or "corpus_record_required" not in formalphysics_gate_schema:
+        errors.append("FormalPhysics source-gate schema is incomplete")
     required_output = {"item_id", "arm_id", "replicate", "lean_status", "semantic_alignment", "tool_receipts"}
     missing_output = required_output - set(schema.get("required", []))
     if missing_output:
@@ -72,10 +76,11 @@ def validate(root: Path, *, strict: bool) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=repo_root(Path(__file__)))
+    parser.add_argument("--source-lock", type=Path, help="candidate/frozen source lock to validate instead of the draft default")
     parser.add_argument("--strict", action="store_true", help="fail pending local source hashes")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    result = validate(args.root, strict=args.strict)
+    result = validate(args.root, strict=args.strict, source_lock_path=args.source_lock)
     if args.output:
         write_json(args.output, result)
     print(json.dumps(result, indent=2, sort_keys=True))
